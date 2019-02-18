@@ -1,0 +1,296 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<head>
+<title>爱华</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link rel="stylesheet" href="css/bootstrap.min.css" >
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/style-responsive.css" rel="stylesheet"/>
+<!-- font CSS -->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="css/font.css" type="text/css"/>
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<link rel="stylesheet" href="css/morris.css" type="text/css"/>
+<!-- calendar -->
+<link rel="stylesheet" href="css/monthly.css">
+<!-- //calendar -->
+<!-- //font-awesome icons -->
+<script src="js/jquery2.0.3.min.js"></script>
+<script src="js/raphael-min.js"></script>
+<script src="js/morris.js"></script>
+<style>
+	html,body,#container,#main-content{
+		height: 100%;
+	}
+	.wrapper{
+		height: 90%;
+		width: 100%;
+		padding: 0;
+	}
+	#load_html{
+		border: none;
+		width: 100%;
+		height: 100%;
+	}
+	.menu_bg{
+		position: fixed;
+		z-index: 100;
+		background: rgba(0,0,0,0);
+		top: 60px;
+		bottom: 0;
+		width: 100%;
+		display: none;
+	}
+	@media(max-width:767px){
+		.menu_bg{
+			display: none;
+		}
+	}
+</style>
+</head>
+<body>
+<section id="container">
+<!--header start-->
+<header class="header fixed-top clearfix">
+<!--logo start-->
+<div class="brand">
+    <a href="index.html" class="logo">
+        VISITORS
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
+    </div>
+</div>
+
+<div class="top-nav clearfix">
+	<div class="sidebar-toggle-box" style="top: -5px;left: 20px;display: none;">
+			<div class="fa fa-bars"></div>
+	</div>
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+        <li>
+					<form class="form-horizontal bucket-form" method="get">
+							<div class="form-group">
+									<div class="col-lg-12 col-xs-12">
+											<select class="form-control input-sm m-bot15">
+													<option>English(en)</option>
+													<option selected="selected">简体中文(zh-hans)</option>
+													<option>한국어.(ko)</option> <!-- 韩语 -->
+													<option>日本語(ja)</option>
+													<option>Français(fr)</option> <!-- 法语 -->
+													<option>España(es)</option><!-- 西班牙 -->
+													<option>Italia(it)</option><!-- 意大利 -->
+													<option>Latine(la)</option><!-- 拉丁语 -->
+											</select>
+										
+									</div>
+							</div>
+					</form>
+            <!-- <input type="text" class="form-control search" placeholder=" Search"> -->
+        </li>
+        <!-- user login dropdown start-->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <!-- <img alt="" src="images/2.png"> -->
+                <span class="username">&nbsp;&nbsp;John Doe&nbsp;&nbsp;</span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu extended logout">
+              <!--  <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li> -->
+                <li><a href="./src/login.html"><i class="fa fa-key"></i> Log Out</a></li>
+            </ul>
+        </li>
+        <!-- user login dropdown end -->
+       
+    </ul>
+    <!--search & user info end-->
+		
+</div>
+</header>
+<!--header end-->
+<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="sub-menu">
+                    <a class="active" data-href="src/index.html">
+                        <i class="fa fa-dashboard"></i>
+                        <span class="common_1">首页</span>
+                    </a>
+                </li>
+								<li class="sub-menu">
+										<a data-href="src/plan.html">
+												<i class="fa fa-book"></i>
+												<span class="common_2">计划</span>
+										</a>
+								</li>
+								<li class="sub-menu">
+										<a data-href="src/robot/robot.html">
+												<i class="fa fa-book"></i>
+												<span class="">机器人</span>
+										</a>
+								</li>
+               <li class="sub-menu">
+                    <a href="#">
+                        <i class="fa fa-th"></i>
+                        <span>收益</span>
+                    </a>
+										<ul class="sub">
+												<li class="sub-menu"><a class="" data-href="src/income/income.html">静态收益</a></li>
+												<li class="sub-menu"><a class="" data-href="src/income/dynIncome.html">动态收益</a></li>
+										</ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="#">
+                        <i class="fa fa-group"></i>
+                        <span class="common_3">团队</span>
+                    </a>
+										<ul class="sub">
+												<li class="sub-menu"><a class="" data-href="src/team/team.html">我的位置</a></li>
+												<li class="sub-menu"><a class="" data-href="src/team/teamInfo.html">团队详细</a></li>
+										</ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-envelope"></i>
+                        <span class="common_4">财务</span>
+                    </a>
+											<ul class="sub">
+													<li class="sub-menu"><a class="" data-href="src/record/transRecordP.html">个人入金记录</a></li>
+													<li class="sub-menu"><a class="" data-href="src/record/transRecordTeam.html">团队入金记录</a></li>
+													<li class="sub-menu"><a class="" data-href="src/record/withdraw.html">提现</a></li>
+													<li class="sub-menu"><a class="" data-href="src/record/withdrawRecord.html">提现记录</a></li>
+											</ul>
+                </li>
+								<li class="sub-menu">
+										<a href="#">
+												<i class="fa fa-certificate"></i>
+												<span class="common_5">会员中心</span>
+										</a>
+										<ul class="sub">
+												<li class="sub-menu"><a data-href="src/vip/setting.html">我的资料</a></li>
+												<li class="sub-menu"><a data-href="src/vip/changeP.html">密码更改</a></li>
+												<li class="sub-menu"><a data-href="src/vip/findP.html">密码找回</a></li>
+										</ul>
+								</li>
+                <li class="sub-menu">
+                    <a data-href="src/FAQ.html">
+                        <i class="fa fa-comment"></i>
+                        <span>FAQ</span>
+                    </a>
+                </li>
+								<li class="sub-menu">
+										<a data-href="src/FAQ.html">
+												<i class="fa fa-comment"></i>
+												<span>资料</span>
+										</a>
+								</li>
+               <li>
+                    <a href="src/login.html">
+                        <i class="fa fa-user"></i>
+                        <span>退出</span>
+                    </a>
+                </li>
+            </ul>            </div>
+        <!-- sidebar menu end-->
+    </div>
+		<!--   menu_bg  当屏幕小于768且菜单在显示时 页面iframe不能添加点击事件 点击空白处不会隐藏menu
+			加一个遮罩 当屏幕小于768且menu在显示时 在iframe上层加遮罩，在遮罩上添加点击事件，来控制menu的隐藏
+			 -->
+		<div class="menu_bg"></div>
+</aside>
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper"> 
+	
+		<iframe id="load_html" src="src/robot/robot.html">
+			
+		</iframe>
+
+<!--main content end-->
+</section>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/jquery.slimscroll.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+<script src="js/jquery.scrollTo.js"></script>
+<!-- morris JavaScript -->	
+<script>
+	$(document).ready(function() {
+		//BOX BUTTON SHOW AND CLOSE
+	   jQuery('.small-graph-box').hover(function() {
+		  jQuery(this).find('.box-button').fadeIn('fast');
+	   }, function() {
+		  jQuery(this).find('.box-button').fadeOut('fast');
+	   });
+	   jQuery('.small-graph-box .box-close').click(function() {
+		  jQuery(this).closest('.small-graph-box').fadeOut(200);
+		  return false;
+	   });
+	   
+		 //   菜单点击
+			$('.sub-menu').click(function(){
+				var href = $(this).find('a').attr('data-href');
+				$('#load_html').attr('src',href);
+			});
+	   
+	});
+	</script>
+<!-- calendar -->
+	<script type="text/javascript" src="language/language.js"></script>
+	<script type="text/javascript">
+		var widthChange = 768;
+		$('.fa.fa-bars').click(function(){ // 当屏幕小于768  且点击顶部菜单按钮是 显示菜单遮罩
+			var cWidth = window.innerWidth;
+			if($('#sidebar').hasClass('hide-left-bar')){
+				$('.menu_bg').css('display','none');
+			}else if(cWidth<widthChange){
+				$('.menu_bg').css('display','block');
+			}
+		});		
+		$(window).click(function(e){ // 当屏幕小于768时  点击屏幕上不在menu区域时  隐藏menu
+			var cWidth = window.innerWidth;
+			if(cWidth <= widthChange && $(e.target).parents('#sidebar').length == 0){
+				$('#sidebar').removeClass('hide-left-bar');
+				$('.menu_bg').css('display','none');
+			}
+		});
+		$(window).resize(function(){
+			var cWidth = window.innerWidth;
+			if(cWidth>widthChange){
+				$('.menu_bg').css('display','none');
+				// $('#sidebar').addClass('hide-left-bar');
+			}
+		});
+		
+		
+		$(window).load('./language/cn.json',function(res){
+			var data = JSON.parse(res);
+			Language.common(data.common);
+		})
+		
+		
+	</script>
+	<!-- //calendar -->
+	
+</body>
+</html>

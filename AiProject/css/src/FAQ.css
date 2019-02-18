@@ -1,0 +1,43 @@
+body{
+	background: #f1f2f7;
+}
+li{
+	list-style: none;
+}
+.con .item {
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 94%;
+	margin: auto;
+	padding-top: 30px;
+}
+.con .item .item_t{
+	color: 20px;
+	font-weight: 600;
+}
+.con .item .con_ul .c_u_l{
+	padding-top: 10px;
+}
+.con .item .con_ul .c_u_l .c_u_l_i{
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	text-indent: 15px;
+	background: #00A6B2;
+	color: white;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	font-size: 14px;
+	margini-top:20px;
+}
+.con .item .con_ul .c_u_l .c_u_l_i_v{
+	font-size: 13px;
+	padding: 12px 0;
+	background: #6bb5ba;
+	color: #eee;
+	display: none;
+}
+.con .item .con_ul .c_u_l .c_u_l_i_v p{
+	margin-left: 15px;
+	line-height: 24px;
+}

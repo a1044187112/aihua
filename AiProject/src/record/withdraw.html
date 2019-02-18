@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<head>
+	<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Form_validation :: w3layouts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function() {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- bootstrap-css -->
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<!-- //bootstrap-css -->
+	<!-- Custom CSS -->
+	<link href="../../css/style.css" rel='stylesheet' type='text/css' />
+	<link href="../../css/style-responsive.css" rel="stylesheet" />
+	<!-- font CSS -->
+	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+	 rel='stylesheet' type='text/css'>
+	<!-- font-awesome icons -->
+	<link rel="../../stylesheet" href="css/font.css" type="text/css" />
+	<link href="../../css/font-awesome.css" rel="stylesheet">
+	<!-- //font-awesome icons -->
+	<script src="../../js/jquery2.0.3.min.js"></script>
+</head>
+<style>
+	.menu{
+		width: 90%;
+		margin-top: 20px;
+		text-align: center;
+	}
+	.menu .menu_i{
+		display: inline-block;
+		padding: 0 15px;
+		border-right: 1px solid #080808;
+	}
+	.menu .menu_i.active{
+		color: #7394f3;
+	}
+	.menu .menu_i:last-child{
+		border-right: none;
+	}
+	@media (min-width: 479px) {
+		panel-body{
+			width: 80%;
+			margin: auto;
+		}
+	}
+	.p_c{
+		position: fixed;
+		width: 100%;
+		top: 0;
+		bottom: 0;
+		background: rgba(0,0,0,0.2);
+	}
+	.p_c .popus{
+		margin: auto;
+		background: white;
+		width: 350px;
+		margin-top: 15%;
+		padding: 10px 0;
+		text-align: center;
+		border-radius: 5px;
+	}
+	.p_c .popus .t{
+		font-weight: 600;
+	}
+	.p_c .popus .p_con{
+		border-bottom: 1px solid #E6E6E6;
+		padding: 20px 0;
+		text-align: center;
+	}
+	.p_c .popus .p_btn{
+		border: none;
+		border-radius: 4px;
+		margin-top: 10px;
+		width: 80px;
+		height: 28px;
+		line-height: 28px;
+	}
+	.change_p_btn{
+		text-align: center;
+	}
+	@media (min-width: 768px){
+		.from_select_type{
+			width: 49% !important;
+			margin-right: 15px;
+		}
+	}
+	.from_selec_re{
+		padding-left: 15px;
+	}
+	.from_selec_re .from_selec_re_v{
+		font-size: 18px;
+		color: #FF0000;
+	}
+	.tips{
+		width: 80%;
+		margin: auto;
+		font-size: 14px;
+		line-height: 28px;
+		font-weight: 600;
+	}
+</style>
+<body>
+	<div class="row">
+		<div class="col-lg-12">
+			<!--  修改交易密码 -->
+			<section class="panel">
+				<header class="panel-heading">
+					提现
+				</header>
+				<div class="panel-body">
+					<form class="form-horizontal bucket-form" method="get">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">提现类型</label>
+							<select class="form-control m-bot15 col-sm-6 from_select_type">
+								<option>收益提现</option>
+								<option>本金提现</option>
+							</select>
+							<span class="help-block from_selec_re">可提现收益：<span class="from_selec_re_v">4812$</span></span>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">提现金额</label>
+							<div class="col-sm-6">
+								<input type="password" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">实际到账金额</label>
+							<div class="col-sm-6">
+								<input type="password" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">账户名称</label>
+							<div class="col-sm-6">
+								<input type="password" class="form-control">
+								<!-- <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span> -->
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">交易密码</label>
+							<div class="col-sm-6">
+								<input type="password" class="form-control round-input">
+							</div>
+						</div>
+						<div class="change_p_btn">
+							<button class="btn btn-primary" type="submit">提交</button>
+						</div>
+					</form>
+				</div>
+			</section>
+			<div class="tips">
+				<div class="tips_t">*提现说明</div>
+				<div class="tips_info">
+					  收益提现时可提现余额必须>50$,扣除10%手续费;本金提现时金额不限制，扣除10%手续费。
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="p_c" style="display: none;">
+		<div class="popus">
+			<div class="t">提示</div>
+			<div class="p_con">请先在个人设置中绑定数字币账号！</div>
+			<button class="p_btn btn-primary">确定</button>
+		</div>
+	</div>
+
+
+	<script src="../../js/bootstrap.js"></script>
+	<script src="../../js/jquery.dcjqaccordion.2.7.js"></script>
+	<script src="../../js/scripts.js"></script>
+	<script src="../../js/jquery.slimscroll.js"></script>
+	<script src="../../js/jquery.nicescroll.js"></script>
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+	<script src="../../js/jquery.scrollTo.js"></script>
+</body>
+<script>
+	$(document).ready(function() {
+		$('.p_c').click(function(e) {
+			e.stopPropagation();
+			if (e.currentTarget == e.target) {
+				$('.p_c').css('display', 'none');
+			}
+		});
+		$('.p_btn').click(function() {
+			$('.p_c').css('display', 'none');
+		});
+	});
+</script>
+</html>

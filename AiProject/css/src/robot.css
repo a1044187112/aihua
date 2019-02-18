@@ -1,0 +1,194 @@
+*{
+	list-style: none;
+}
+
+body{
+	background: rgba(47,47,47);
+	padding-top: 10px;
+	padding-bottom: 40px;
+}
+
+/*    */
+@media (min-width:1200px) {
+	.hea{
+		margin-left: 20px;
+	}
+	.info.container{
+		margin-left: 20px;
+	}
+}
+
+/*    收益模块  */
+.hea .hea_u .hea_l{
+	text-align: center;
+	padding: 0;
+	margin-top: 10px;
+	padding-bottom: 15px;
+}
+.hea .hea_u .hea_l .head_con{
+	background: rgb(31,31,31);
+	width: 90%;
+	margin: auto;
+	color: rgb(173,173,173);
+	padding: 20px 0;
+	text-align: left;
+	border-radius: 8px;
+	position: relative;
+	min-height: 200px;
+	overflow: hidden;
+	box-shadow: 1px 1px 1px  #999,
+		-1px -1px 1px #999;
+}
+.hea .hea_u .hea_l .head_con:hover{
+	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+}
+.hea .hea_u .hea_l .head_con .head_icon{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: rgb(247,147,26);
+	text-align: center;
+	line-height: 32px;
+	color: black;
+	margin-left: 10%;
+	font-size: 22px;
+	font-weight: 600;
+}
+.hea .hea_u .hea_l .head_con .head_title{
+	font-size: 22px;
+	margin-left: 8px;
+}
+.hea .hea_u .hea_l .head_con .head_c{
+	margin-left: 10%;
+	font-size: 16px;
+	margin-top: 12px;
+	color: rgb(244,188,0);
+}
+.hea .hea_u .hea_l .head_con .head_c .heac_c_v{
+	float: right;
+	color:rgb(3,177,134);
+	margin-right: 15px;
+}
+
+
+#d_canvas_a,#all_canvas_a{
+	position: absolute;
+	top: -7px;
+	left: -90px;
+}
+
+
+
+
+/*   列表  */
+.table_t{
+	color: rgb(171,171,171);
+	margin-top: 20px;
+	font-size: 20px;
+	padding-left: 20px;
+}
+.table_t img{
+	width:20px;
+	margin-right: 10px;
+}
+.table_ul{
+	margin-top: 10px;
+	border-top: 1px solid rgb(171,171,171);
+	padding-top: 20px;
+	font-size: 13px;
+}
+.table_ul .table_li{
+	display: inline-flex;
+	width: 100%;
+	color: rgb(171,171,171);
+	align-content: space-between;
+	height: 38px;
+	line-height: 38px;
+}
+.table_ul .table_li>div{
+	width: 25%;
+	text-align: center;
+}
+.table_ul .table_li>div .active {
+	display: inline-block;
+	width: 40px;
+	color: white;
+	height: 20px;
+	line-height: 21px;
+	border-radius: 4px;
+}
+.table_ul .table_li>div .active.buy{
+	background: rgb(158,186,70);
+}
+.table_ul .table_li>div .active.sell{
+	background: rgb(251,174,28);
+}
+
+/*   8个数据模块  */
+.data_u{
+	padding: 30px 0;
+}
+.data_u .data_l{
+	padding-bottom: 10px;
+}
+.data_u .data_l .data_item{
+	width: 94%;
+	margin: auto;
+	border-radius: 8px;
+	box-shadow: 1px 1px 1px  #999,
+		-1px -1px 1px #999;
+	padding-top: 15px;
+	color: rgb(171,171,171);
+	padding-bottom: 15px;
+	margin-top: 20px;
+}
+.data_u .data_l .data_item:hover{
+	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+}
+.data_u .data_l .data_item .icon{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	background: rgb(247,147,26);
+	border-radius: 50%;
+	margin-left: 5%;
+}
+.data_u .data_l .data_item .icon:hover{
+	background: #0044CC;
+}
+.data_u .data_l .data_item .icon img{
+	width: 80%;
+	margin-left: 28%;
+	margin-top: 5px;
+}
+.data_u .data_l .data_item .data_t{
+	display: inline-block;
+	width: 50%;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+.data_u .data_l .data_item .data_p{
+	margin-top: 25px;
+	text-indent: 15px;
+	color: rgb(143,186,70);
+	font-size: 18px;
+}
+.data_u .data_l .data_item .data_info .data_i_1{
+	margin-top: 10px;
+	font-size: 13px;
+	margin-left: 15px;
+}
+.data_u .data_l .data_item .data_info .data_i_2{
+	float: right;margin-right: 15px;
+	color: rgb(143,186,70);
+	font-size: 18px;
+}

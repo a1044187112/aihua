@@ -1,0 +1,240 @@
+*{
+	list-style: none;
+}
+.con{
+	padding: 0;
+}
+.con .show{
+	background: rgb(31,31,31);
+	overflow: hidden;
+	width: 90%;
+	margin: auto;
+	margin-top: 10px;
+	padding: 0 10px;
+}
+.con .show .show_ul{
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	white-space: nowrap;
+}
+.con .show .show_ul .show_li{
+	padding: 0 5px;
+	display: inline-block;
+	color: rgb(158,186,70);
+}
+.k_con{
+	background: rgb(31,31,31);
+	width: 94%;
+	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+}
+.k_con .k_i,
+.k_con .k_item{
+	width: 90%;
+	margin: auto;
+	padding-bottom: 20px;
+}
+.k_con .k_i .k_i_i,
+.k_con .k_item .k_li{
+	display: inline-block;
+	color: white;
+	padding: 0 15px;
+	border-right: 2px solid #f1f1f1;
+	cursor: pointer;
+}
+.k_con .k_i .k_i_i:last-child,
+.k_con .k_item .k_li:last-child{
+	border-right: none;
+}
+.k_con .k_i .k_i_i.active,
+.k_con .k_item .k_li.active{
+	color: #147EFB;
+}
+.k_con .k_i{
+	text-align: right;
+}
+.k_con .k_i .k_i_i{
+	font-size: 14px;
+}
+
+/*    */
+@media (min-width:1200px) {
+	.hea{
+		margin-left: 20px;
+	}
+	.info.container{
+		margin-left: 20px;
+	}
+}
+
+/*    收益模块  */
+.hea .hea_u .hea_l{
+	text-align: center;
+	padding: 0;
+	margin-top: 10px;
+}
+.hea .hea_u .hea_l .head_con{
+	background: rgb(31,31,31);
+	width: 90%;
+	margin: auto;
+	color: rgb(173,173,173);
+	padding: 20px 0;
+	text-align: left;
+	border-radius: 8px;
+	position: relative;
+	min-height: 200px;
+	overflow: hidden;
+}
+.hea .hea_u .hea_l .head_con:hover{
+	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+}
+.hea .hea_u .hea_l .head_con .head_icon{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: rgb(158,186,70);
+	text-align: center;
+	line-height: 32px;
+	color: white;
+	margin-left: 10%;
+	font-size: 22px;
+}
+.hea .hea_u .hea_l .head_con .head_title{
+	font-size: 22px;
+	margin-left: 8px;
+}
+.hea .hea_u .hea_l .head_con .head_c{
+	margin-left: 10%;
+	font-size: 22px;
+	margin-top: 12px;
+	
+}
+.hea .hea_u .hea_l:nth-child(2) .head_con{
+	height: 240px;
+}
+.hea .hea_u .hea_l .head_con .head_t_s .head_t_info{
+	width: 100%;
+	background: rgb(158,186,70);
+	margin-top: -20px;
+	color: white;
+	text-indent: 10%;
+	height: 42px;
+	line-height: 42px;
+	font-size: 16px;
+}
+
+#d_canvas_a,#all_canvas_a{
+	position: absolute;
+	top: -7px;
+	left: -90px;
+}
+.head_canvas_f{
+	width: 350px;
+	height: 200px;
+	margin: auto;
+}
+#end_canvas{
+	/* position: absolute;
+	top: 1px;
+	left: -70px; */
+	margin: auto;
+}
+.head_t_s .end_r_1,
+.head_t_s .end_r_2,
+.head_t_s .end_r_3{
+	position: absolute;
+}
+.head_t_s .end_r_1{
+	top: 100px;
+	left: 6%;
+	text-align: right;
+}
+.head_t_s .end_r_1 .end_r_v{
+	color: rgb(158,186,70);
+	font-size: 22px;
+}
+.head_t_s .end_r_2{
+	font-size: 14px;
+	width: 100%;
+	text-align: center;
+	z-index: 10;
+	top: 148px;
+}
+.head_t_s .end_r_3 .end_r_t,
+.head_t_s .end_r_n .end_r_t{
+	font-size: 14px;
+}
+.head_t_s .end_r_3{
+	top: 100px;
+	right: 5%;
+	text-align: left;
+}
+.head_t_s .end_r_3 .end_r_v{
+	font-size: 22px;
+	color: rgb(250,166,75);
+}
+.head_t_s .end_r_4{
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	margin-top: -45px;
+}
+
+
+/*  账户信息  */
+.info .account{
+	width: 94%;
+	background: rgba(31,31,31,0.9);
+	padding: 20px 0 40px 0;
+	border-radius: 8px;
+	margin-top: 20px;
+}
+.info .account .acc_name{
+	text-align: center;
+	color: white;
+	font-size: 16px;
+}
+.info .account .acc_ul{
+	width: 80%;
+	margin: auto;
+	border-top: 1px solid #fff;
+	margin-top: 30px;
+	padding-top: 20px;
+}
+.info .account .acc_ul .acc_li{
+	padding: 10px 0;
+}
+.info .account .acc_ul .acc_li img{
+	width: 16px;
+	margin-right: 10px;
+}
+.info .account .acc_ul .acc_li .acc_li_t{
+	font-size: 16px;
+	color: white;
+	font-size: 13px;
+}
+.info .account .acc_ul .acc_li .acc_li_url{
+	display: block;
+	outline: none;
+	text-indent: 4px;
+	font-size: 14px;
+	margin-top: 4px;
+	border-radius: 5px;
+}
+.info .account .acc_ul .acc_li .acc_copy_btn{
+	display: inline-block;
+	background: rgb(158,186,70);
+	color: white;
+	font-size: 14px;
+	padding: 4px 10px;
+	border-radius: 5px;
+	margin-top: 10px;
+}

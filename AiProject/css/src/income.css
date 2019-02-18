@@ -1,0 +1,132 @@
+*{
+	list-style: none;
+}
+
+.con{
+	background: rgb(238,249,240);
+	width: 100%;
+}
+.con .con_ul{
+	background: rgb(238,249,240);
+	width: 94%;
+	margin: auto;
+	margin-top: 20px;
+	display: flex;
+}
+.con .con_ul .con_li{
+	width: 32%;
+	color: #999;
+	line-height: 38px;
+	text-align: center;
+	padding: 5px 0;
+}
+.con .con_ul .con_li .con_li_v{
+	color: white;
+	padding-bottom: 20px;
+}
+.con .con_u .con_l{
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
+.con .con_u .con_l .item{
+	min-height: 240px;
+	width: 94%;
+	margin: auto;
+	background: rgb(76,76,76);
+	text-align: center;
+	padding-top: 20px;
+	color: white;
+	position: relative;
+	border-radius: 4px;
+	box-shadow: 2px 2px 1px rgba(76,76,76,0.5),
+	-2px -2px 1px rgba(76,76,76,0.5);
+	padding-bottom: 10px;
+}
+.con .con_u .con_l .item:hover{
+	transform: scale(1.02);
+	-webkit-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+	-o-transform: scale(1.02);
+	-ms-transform: scale(1.02);
+}
+
+.con .con_u .con_l .item .item_t{
+	font-size: 24px;
+}
+.con .con_u .con_l .item .item_income{
+	font-size: 13px;
+	margin-top: 8px;
+}
+.con .con_u .con_l .item .item_income span{
+	color: rgb(251,150,120);
+	font-size: 16px;
+}
+.con .con_u .con_l .item .item_tip,
+.con .con_u .con_l .item .item_remind{
+	text-align: left;
+	width: 80%;
+	margin: auto;
+	margin-top: 15px;
+	font-size: 13px;
+}
+.con .con_u .con_l .item .item_btn{
+	position: absolute;
+	display: inline-block;
+	width: 30%;
+	height: 28px;
+	line-height: 28px;
+	background: rgb(158,186,70);
+	font-size: 14px;
+	border-radius: 4px;
+	bottom: 20px;
+	left: 35%;
+}
+.con .con_u .con_l .item .item_btn.active{
+	background: rgb(251,150,120);
+}
+
+ .table-agile-info{
+	background: rgb(238,249,240);
+	width: 100%;
+	margin: auto;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+}
+.table_close{
+	background: rgb(76,76,76);
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	margin: auto;
+	padding: 0;
+	right: 10px;
+	position: fixed;
+	top: 10px;
+	z-index: 11;
+	overflow: hidden;
+}
+.table_close img{
+	width: 50%;
+	margin-left: 25%;
+	margin-top: -2px;
+}
+ .table-agile-info .panel .table{
+	margin-bottom: 0;
+}
+
+@media (max-width:767px){
+	.table-agile-info{
+		background: rgba(0,0,0,0);
+		width: 100%;
+		margin: auto;
+	}
+}
+.con_tips{
+	width: 90%;
+	margin: auto;
+	margin-top: 15px;
+	font-weight: 600;
+}
