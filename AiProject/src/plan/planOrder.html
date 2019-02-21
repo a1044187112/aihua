@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Login :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="../../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../../css/style-responsive.css" rel="stylesheet"/>
+<!-- font CSS -->
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="../css/font.css" type="text/css"/>
+<link href="../../css/font-awesome.css" rel="stylesheet"> 
+<link href="../../css/src/plan.css" rel="stylesheet" />
+<!-- //font-awesome icons -->
+<script src="../../js/jquery2.0.3.min.js"></script>
+</head>
+<style>
+	.confirm_btn{
+		margin-top: -35px !important;
+		margin-right: 0 !important;
+	}
+	.cancel_btn{
+		margin-left: 4px !important;
+	}
+	.confirm_btn,.cancel_btn{
+		height: 22px !important;
+		line-height: 18px !important;
+		font-size: 12px;
+	}
+	.con_li_address{
+		font-size: 13px;
+		color: #85ff00;
+	}
+	.con_li_t2{
+		margin-top: 18px !important;
+	}
+	.con_li input{
+		background: rgba(0,0,0,0);
+		border: none;
+		height: 10px;
+		outline: none;
+		display: block;
+		color: rgb(0,0,0,0);
+	}
+	.con_li input::selection{
+		background: rgba(0,0,0,0);
+	}
+</style>
+<body style="background: #6ecff2;">
+	<aside>
+		<div class="con container"> 
+			<ul class="con_ul row" id="plan_ul">
+				<li class="con_li col-lg-4 col-md-4 col-sm-6 col-xs-12">
+					<div class="item">
+						<div class="con_li_t">BITCOIN</div>
+						<div class="con_li_t1">0.51900972</div>
+						<div class=" con_li_address">37f7bAFpuoTv7zbu43dLr1BVQmqrTmeU4e</div>
+						<button class="confirm_btn">复制钱包</button>
+						<input type="text" value="" />
+						<div class="con_li_t2">总计： U$2010.00</div>
+						<div class="con_li_t2">日期 21/02/2019 15:15:00</div>
+						<div class="con_li_t2">状态<button class="cancel_btn">未支付</button></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</aside>
+
+<script src="../../js/bootstrap.js"></script>
+<script src="../../js/md5.js"></script>
+<script src="../../js/common/common.js"></script>
+<link href="../../js/tool/tool.css" rel="stylesheet" />
+<script src="../../js/tool/tool.js"></script>
+</body>
+<script>
+	var wallet_address = localStorage.getItem('wallet_address'); // 平台钱包地址
+	$('body').delegate('.confirm_btn','click',function(){
+		var addresss = $(this).prev('.con_li_address').text(); // 获取钱包地址信息
+		 $(this).next('input').val(addresss).select(); // 将地址信息加载到input中并设为选中状态
+		 document.execCommand('copy'); // 复制
+	});
+</script>
+</html>

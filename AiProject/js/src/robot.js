@@ -8,6 +8,11 @@ var robot = {
 		$("#d_canvas_a").css('width', parseInt($('.head_con').css('width')) + 180 + 'px'); // 设置画布宽度
 		var dom = document.getElementById("d_canvas_a");
 		robot.myChart = echarts.init(dom);
+		var dataArr = [];
+		for(var i = 0 ; i < 7 ; i++){
+			var itemData = Math.random()*1000+100;
+			dataArr.push(itemData);
+		}
 		option = {
 			calculable: true,
 			xAxis: [{
@@ -35,7 +40,7 @@ var robot = {
 							}
 						}
 					},
-					data: [800, 120, 210, 540, 260, 830, 710]
+					data:dataArr
 				},
 
 			]
@@ -48,6 +53,11 @@ var robot = {
 		$("#all_canvas_a").css('width', parseInt($('.head_con').css('width')) + 200 + 'px'); // 设置画布宽度
 		var dom = document.getElementById("all_canvas_a");
 		robot.myChart2 = echarts.init(dom);
+		var dataArr = [];
+		for(var i = 0 ; i < 7 ; i++){
+			var itemData = Math.random()*1000+100;
+			dataArr.push(itemData);
+		}
 		option = {
 			calculable: true,
 			xAxis: [{
@@ -75,7 +85,7 @@ var robot = {
 							}
 						}
 					},
-					data: [800, 120, 210, 540, 260, 830, 710]
+					data: dataArr
 				},
 
 			]
@@ -108,7 +118,6 @@ var robot = {
 		var value = Math.random() * 1000;
 		for (var i = 0; i < 100; i++) {
 			var item = randomData();
-			console.log(item);
 			data.push(item);
 		}
 
@@ -160,19 +169,19 @@ var robot = {
 			}]
 		};
 
-// 		setInterval(function() {
-// 
-// 			for (var i = 0; i < 5; i++) {
-// 				data.shift();
-// 				data.push(randomData());
-// 			}
-// 
-// 			robot.myChart3.setOption({
-// 				series: [{
-// 					data: data
-// 				}]
-// 			});
-// 		}, 1000);
+		setInterval(function() {
+
+			for (var i = 0; i < 5; i++) {
+				data.shift();
+				data.push(randomData());
+			}
+
+			robot.myChart3.setOption({
+				series: [{
+					data: data
+				}]
+			});
+		}, 1000);
 
 		if (option && typeof option === "object") {
 			robot.myChart3.setOption(option, true);

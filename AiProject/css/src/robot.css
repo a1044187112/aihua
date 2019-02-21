@@ -3,9 +3,9 @@
 }
 
 body{
-	background: rgba(47,47,47);
 	padding-top: 10px;
 	padding-bottom: 40px;
+	margin-left: 15px;
 }
 
 /*    */
@@ -17,7 +17,12 @@ body{
 		margin-left: 20px;
 	}
 }
-
+.content{
+	background: rgb(47,47,47);
+	border-radius: 8px;
+	padding-top: 20px;
+	overflow: hidden;
+}
 /*    收益模块  */
 .hea .hea_u .hea_l{
 	text-align: center;

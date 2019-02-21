@@ -20,9 +20,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- Custom CSS -->
 	<link href="../../css/style.css" rel='stylesheet' type='text/css' />
 	<link href="../../css/style-responsive.css" rel="stylesheet" />
-	<!-- font CSS -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
-	 rel='stylesheet' type='text/css'>
 	<!-- font-awesome icons -->
 	<link rel="../../stylesheet" href="css/font.css" type="text/css" />
 	<link href="../../css/font-awesome.css" rel="stylesheet">
@@ -30,91 +27,146 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //font-awesome icons -->
 	<script src="../../js/jquery2.0.3.min.js"></script>
 </head>
-<body>
-	<div class="row">
-		<div class="col-lg-12">
-			<!-- 修改登录密码 -->
-			<section class="panel">
-				<header class="panel-heading">
-					修改登录密码
-				</header>
-				<div class="panel-body">
-					<form class="form-horizontal bucket-form" method="get">
-						<div class="form-group">
-							<label class="col-sm-3 control-label">请输入登录密码</label>
-							<div class="col-sm-6">
-								<input type="password" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">请输入新密码</label>
-							<div class="col-sm-6">
-								<input type="password" class="form-control">
-								<!-- <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span> -->
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">确认新密码</label>
-							<div class="col-sm-6">
-								<input type="password" class="form-control round-input">
-							</div>
-						</div>
-						<div class="change_p_btn">
-							<button class="btn btn-primary" type="submit">提交</button>
-						</div>
-					</form>
-				</div>
-			</section>
-			
-			<!--  修改交易密码 -->
-			<section class="panel">
-				<header class="panel-heading">
-					修改交易密码
-				</header>
-				<div class="panel-body">
-					<form class="form-horizontal bucket-form" method="get">
-						<div class="form-group">
-							<label class="col-sm-3 control-label">请输入交易密码</label>
-							<div class="col-sm-6">
-								<input type="password" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">请输入登录密码</label>
-							<div class="col-sm-6">
-								<input type="password" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">请输入新密码</label>
-							<div class="col-sm-6">
-								<input type="password" class="form-control">
-								<!-- <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span> -->
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">确认新密码</label>
-							<div class="col-sm-6">
-								<input type="password" class="form-control round-input">
-							</div>
-						</div>
-						<div class="change_p_btn">
-							<button class="btn btn-primary" type="submit">提交</button>
-						</div>
-					</form>
-				</div>
-			</section>
+<body style="background: #6ecff2;">
+	<div class="cp">
+		<div class="hea row">
+			<div class="hea_t col-lg-2 col-md-2 col-sm-3 col-xs-6 active" data-show="con_login">修改登录密码</div>
+			<div class="hea_t col-lg-2 col-md-2 col-sm-3 col-xs-6" data-show="con_trans">修改交易密码</div>
+		</div>
+		<div class="con row">
+			<!--  修改登录密码 -->
+			<div class=" con_c con_login">
+				<div class="con_title">登录密码</div>
+				<ul class="con_c_u">
+					<li class="con_c_li">
+						<div class="con_c_l_t">旧密码</div>
+						<input class="con_c_l_in" name="pwd" type="password" placeholder="请输入旧密码" />
+					</li>
+					<li class="con_c_li">
+						<div class="con_c_l_t">新密码</div>
+						<input class="con_c_l_in" name="new_pwd" type="password" placeholder="请输入新密码" />
+					</li>
+					<li class="con_c_li">
+						<div class="con_c_l_t">确认新密码</div>
+						<input class="con_c_l_in" name="con_new_pwd" type="password" placeholder="请确认新密码" />
+					</li>
+					<li class="con_btn">
+						<div class="con_btn_b modify_pwd">提交修改</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 修改交易面 -->
+			<div class=" con_c con_trans" style="display: none;">
+				<div class="con_title">交易</div>
+				<ul class="con_c_u">
+					<li class="con_c_li">
+						<div class="con_c_l_t">旧交易密码</div>
+						<input class="con_c_l_in" type="password" name="tr_p" placeholder="请输入旧交易密码" />
+					</li>
+					<li class="con_c_li">
+						<div class="con_c_l_t">登录密码</div>
+						<input class="con_c_l_in" type="password" name="tr_pwd" placeholder="请输入登录密码" />
+					</li>
+					<li class="con_c_li">
+						<div class="con_c_l_t">新交易密码</div>
+						<input class="con_c_l_in" type="password" name="new_tr" placeholder="请输入新交易密码" />
+					</li>
+					<li class="con_c_li">
+						<div class="con_c_l_t">确认新交易密码</div>
+						<input class="con_c_l_in" type="password" name="con_new_tr" placeholder="请确认新交易密码" />
+					</li>
+					<li class="con_btn">
+						<div class="con_btn_b modify_p_pwd">提交修改</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-	<script src="../../js/bootstrap.js"></script>
-	<script src="../../js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="../../js/scripts.js"></script>
-	<script src="../../js/jquery.slimscroll.js"></script>
-	<script src="../../js/jquery.nicescroll.js"></script>
-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-	<script src="../../js/jquery.scrollTo.js"></script>
 </body>
+<script src="../../js/bootstrap.js"></script>
+<script src="../../js/common/common.js"></script>
+<script src="../../js/md5.js"></script>
 <script>
-
+	$(".hea_t").click(function(){
+		$(".hea_t").removeClass('active');// 交易密码 登录密码按钮选中切换 
+		$(this).addClass('active');
+		
+		$('.con_c').css('display','none'); // 将输入模块隐藏 
+		var showClass = $(this).attr('data-show'); // 获取要显示的输入模块类名
+		$('.'+showClass).css('display','block'); // 显示
+	});
+	/**
+     * #用户修改密码
+     * @post password 原密码
+     * @post new_password 新密码
+     * @exception 102 用户不存在
+     * @exception 103 原密码错误
+     * @exception 104 密码修改失败
+     */
+    // public function setPassword()
+	$('.modify_pwd').click(function(){
+		var pwd = $('[name="pwd"]').val()
+		if(pwd.length < 6){
+			alert('原密码输入错误');
+			return false;
+		}
+		var new_pwd = $('[name="new_pwd"]').val()
+		if(new_pwd.length < 6){
+			alert('新密码输入错误');
+			return false;
+		}
+		var con_new_pwd = $('[name="con_new_pwd"]').val()
+		if(con_new_pwd != new_pwd){
+			alert('两次输入的密码不一致');
+			return false;
+		}
+		var token = localStorage.getItem('token');
+		var id = localStorage.getItem('id');
+		var data = {"token":token,"user_id":id,"password":pwd,"new_password":new_pwd};
+		common.post('/setPassword',data,function(res){
+			if(res.code == 0){
+				alert("修改成功");
+			}
+		});
+	});
+	/**
+     * #用户修改交易密码
+     *@post trade_password 原密码
+     * @post new_trade_password 新密
+     * @exception 102 用户不存在
+     * @exception 103 原密码错误
+     * @exception 104 密码修改失败
+     */
+    // public function setTradePassword()
+	$('.modify_p_pwd').click(function(){
+		var tr_p = $('[name="tr_p"]').val();
+		if(tr_p.length < 6){
+			alert('交易密码输入错误');
+			return false;
+		}
+		var pwd = $('[name="tr_pwd"]').val();
+		if(pwd.length < 6){
+			alert('登录密码输入错误');
+			return false;
+		}
+		var new_tr = $('[name="new_tr"]').val()
+		if(new_tr.length < 6){
+			alert('新密码输入错误');
+			return false;
+		}
+		var con_new_tr = $('[name="con_new_tr"]').val()
+		if(con_new_tr != new_tr){
+			alert('两次输入的密码不一致');
+			return false;
+		}
+		var token = localStorage.getItem('token');
+		var id = localStorage.getItem('id');
+		var data = {"token":token,"user_id":id,"trade_password":tr_p,"new_trade_password":new_tr};
+		common.post('/setTradePassword',data,function(res){
+			if(res.code == 0){
+				alert("修改成功");
+			}
+		});
+	});
 </script>
 </html>

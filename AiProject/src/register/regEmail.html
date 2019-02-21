@@ -14,81 +14,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="../../css/style.css" rel='stylesheet' type='text/css' />
 <link href="../../css/style-responsive.css" rel="stylesheet"/>
 <!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
 <link rel="stylesheet" href="../css/font.css" type="text/css"/>
 <link href="../../css/font-awesome.css" rel="stylesheet"> 
+<link href="../../css/src/login.css" rel="stylesheet" />
 <!-- //font-awesome icons -->
 <script src="../../js/jquery2.0.3.min.js"></script>
 
 <link rel="stylesheet" href="../../js/guojia/css/select_gj.css">
 <script type="text/javascript" src="../../js/guojia/js/select_gj.min.js"></script>
 <script src="../../js/guojia/js/select2_1.js"></script>
+<script src="../../js/md5.js"></script>
 </head>
 <body>
-	<style>
-		html{
-			height: 100%;
-			/* overflow: hidden; */
-		}
-		body{
-			background: url(../../images/login_bg.jpg);
-			background-size: 100% 100%;
-			-webkit-background-origin: inherit;
-		}
-		.re_con{
-			position: relative;
-		}
-		.re_con .re_con_btn{
-			position: absolute;
-			top: 15px;
-			right: 1px;
-			background: #f0ad4f;
-			color: white;
-			height: 50px;
-			line-height: 50px;
-			padding: 0 10px;
-			cursor: pointer;
-		}
-		.re_con .re_con_btn.active{
-			background: #696969;
-		}
-		/*   没有输入时的提示 */
-		.f_item .f_item_re{
-			color: #FF0000;
-			font-size: 13px;
-			text-align: right;
-			padding-right: 15px;
-			margin-top: -10px;
-			display: none;
-		}
-		.f_item .f_item_re.active{
-			display: block;
-		}
-	</style>
 <div class="reg-w3">
 <div class="w3layouts-main">
-	<h2>Register Now</h2>
+	<h2>注册</h2>
 		<form >
 			<div class="f_item">
 				<input type="email" class="ggg" name="Email" placeholder="邮箱" required="">
 				<div class="f_item_re">邮箱输入错误</div>
 			</div>
 			<div class="re_con f_item">
-				<input type="text" class="ggg" name="Name" placeholder="验证码" required="">
+				<input type="number" class="ggg" name="verify_code" placeholder="验证码" required="">
 				<div class="f_item_re">请输入验证码</div>
-				<div class="re_con_btn active">获取验证码</div>
+				<div class="re_con_btn">获取验证码</div>
 			</div>	
 			<div class="f_item">
-				<input type="password" class="ggg" name="Password" placeholder="密码" required="">
+				<input type="password" class="ggg" name="password" placeholder="密码" required="">
 				<div class="f_item_re">请输入密码</div>
 			</div>
 			<div class="f_item">
-				<input type="password" class="ggg" name="Password" placeholder="确认密码" required="">
+				<input type="password" class="ggg" name="c_password" placeholder="确认密码" required="">
 				<div class="f_item_re">请确认密码</div>
 			</div>
 			<div class="f_item">
-			<input type="text" class="ggg" name="in_code" placeholder="邀请码" required="">
+			<input type="text" class="ggg" name="invitation_code" placeholder="邀请码" required="">
 				<div class="f_item_re">请输入邀请码</div>
 			</div>
 		</form>
@@ -96,19 +56,112 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 </div>
 <script src="../../js/bootstrap.js"></script>
-<!-- <script src="../../js/jquery.dcjqaccordion.2.7.js"></script> -->
-<!-- <script src="../../js/jquery.slimscroll.js"></script> -->
-<!-- <script src="../../js/jquery.nicescroll.js"></script> -->
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<!-- <script src="../../js/jquery.scrollTo.js"></script> -->
+<script src="../../js/common/common.js"></script>
+<link href="../../js/tool/tool.css" rel="stylesheet" />
+<script src="../../js/tool/tool.js"></script>
 </body>
 <script>
+	 // 将注册链接写在localStorage
+	localStorage.setItem("registerLink",window.location.href.split("?")[0]);
+	var locationArr = window.location.href.split("?");
+	if(locationArr[1]){
+		var invite = locationArr[1].split("=")[1];
+		$('[name="invitation_code"]').val(invite).prop('disabled','disabled');
+	}
+// 	* ~@post phone 手机号(和邮箱不能同时为空)
+//      * ~@post email 邮箱(和手机号不能同时为空)
+//      * @post nickname 昵称
+//      * @post password 密码
+//      * @post trade_password 交易密码
+//      * @post real_name 真实姓名
+//      * @post sex 性别 0：男 1：女
+//      * @post credential_type 证件类型 0：身份证 1：其它
+//      * @post credential_id 证件号码
+//      * @post country_id 所在国家id
+//      * @post verify_code 验证码
+//      * ~@post invitation_code 邀请码
+//      * @exception 102 验证码已过期
+//      * @exception 103 验证码错误
+//      * @exception 104 国家不存在
+//      * @exception 105 用户已存在
+//      * @exception 106 邀请码不存在
+//      * @exception 107 密码错误
 	$('#next_btn').click(function(){
+		$('.f_item_re').css('display','none');
 		var email = $('[name="Email"]').val();
 		if(!(/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/.test(email))){
-			console.log('邮箱输入错误');
 			$('[name="Email"]').next('f_item_re').css('display','block');
 			return false;
+		}
+		var verify_code = $('[name="verify_code"]').val(); // 验证码
+		if(verify_code.length < 4){
+			$('[name="verify_code"]').next('f_item_re').css('display','block');
+			return false;
+		}
+		var password = $('[name="password"]').val(); // 密码
+		if(password.length==0){
+			$('[name="password"]').next('f_item_re').css('display','block');
+			return false;
+		}
+		var c_password = $('[name="c_password"]').val(); // 确认密码
+		if(c_password.length==0){
+			$('[name="c_password"]').next('f_item_re').css('display','block');
+			return false;
+		}
+		if(c_password!=password){
+			tool.remindPopus('提示','两次输入的密码不一致');
+			return false;
+		}
+		var invitation_code = $('[name="invitation_code"]').val(); // 邀请码
+		var data = {
+			"email":email,
+			"verify_code":verify_code,
+			"password":password,
+			"invitation_code":invitation_code
+		};
+		if(invitation_code.length == 0){ // 如果没有邀请码 删除
+			delete data.invitation_code;
+		}
+		localStorage.setItem('reg_data',JSON.stringify(data));
+		
+		window.location.href = '/AiProject/src/register/regTransP.html';
+	});
+	/**
+     * 发送邮箱验证码 有效时间为5分钟
+     * @post email 邮箱
+     * @exception 102 发送失败
+     */
+    // public function sendEmailCode($email = '')
+	var isGet = true;
+	$('.re_con_btn').click(function(){ // 邮箱获取验证码 
+		var email = $('[name="Email"]').val();
+		if(!(/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/.test(email))){
+			tool.remindPopus('提示','邮箱输入错误');
+			$('[name="Email"]').next('f_item_re').css('display','block');
+			return false;
+		}else{
+			var data = {"email":email};
+			common.post('/sendEmailCode',data,function(res){
+				if(res.code == 0){
+					tool.remind('验证码已发送至您的邮箱');
+				}
+			});
+			if(isGet){
+				isGet = false;
+				//  限制60秒不能重复获取
+				var count = 60;
+				let time = setInterval(function(){
+					if(count == 0){
+						clearInterval(time);
+						$('.re_con_btn').text('获取验证码')
+						isGet = true;
+					}else{
+						$('.re_con_btn').text(count);
+					}				
+					count -- ;
+				},1000);
+			}
+			
 		}
 	});
 </script>

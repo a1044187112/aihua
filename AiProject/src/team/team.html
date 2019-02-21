@@ -1,109 +1,138 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title></title>
-<link href="../js/jquery-tree/jquery.treemenu.css" rel="stylesheet" type="text/css">
-<style>
-*{list-style:none;border:none;}
-body{font-family:Arial;background-color:#2C3E50;}
-.tree {  color:#46CFB0;width:800px;margin:30px auto;}
-.tree li,
-.tree li > a,
-.tree li > span {
-    padding: 4pt;
-    border-radius: 4px;
-}
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="../../js/jquery-tree/jquery.treemenu.css" rel="stylesheet" type="text/css">
+		<style>
+			* {
+				list-style: none;
+				border: none;
+			}
 
-.tree li a {
-   color:#46CFB0;
-    text-decoration: none;
-    line-height: 20pt;
-    border-radius: 4px;
-}
+			body {
+				font-family: Arial;
+				}
+			body .con{
+				background-color: #2C3E50;	
+				border-radius: 8px;
+				height: 600px;
+				padding-top: 30px;
+			}
+			.tree {
+				color: #46CFB0;
+				/* width: 800px; */
+				margin: 30px auto;
+			}
 
-.tree li a:hover {
-    background-color: #34BC9D;
-    color: #fff;
-}
+			.tree li,
+			.tree li>a,
+			.tree li>span {
+				padding: 4pt;
+				border-radius: 4px;
+			}
 
-.active {
-    background-color: #34495E;
-    color: white;
-}
+			.tree li a {
+				color: #46CFB0;
+				text-decoration: none;
+				line-height: 20pt;
+				border-radius: 4px;
+			}
 
-.active a {
-    color: #fff;
-}
+			.tree li a:hover {
+				background-color: #34BC9D;
+				color: #fff;
+			}
 
-.tree li a.active:hover {
-    background-color: #34BC9D;
-}
-</style>
-</head>
+			.active {
+				background-color: #34495E;
+				color: white;
+			}
 
-<body>
-<ul class="tree">
-  <li><a href="">Home</a></li>
-  <li><span>Category</span>
-    <ul>
-      <li><a href="#">jQuery</a>
-        <ul>
-          <li><a href="#">jQuery</a></li>
-          <li><a href="#">jQuery UI</a></li>
-          <li><a href="#">jQuery Mobile</a></li>
-        </ul>
-      </li>
-      <li><a href="#">JavaScript</a>
-        <ul>
-          <li><a class="active" href="#">AngularJS</a></li>
-          <li><a href="#">React</a></li>
-          <li><a href="#">Backbone</a>
-			<ul>
-			<li><a href="#">jQuery</a>
-				<ul>
-				<li><a href="#">jQuery</a>
+			.active a {
+				color: #fff;
+			}
+
+			.tree li a.active:hover {
+				background-color: #34BC9D;
+			}
+			.tree li a.self{
+				background-color: #34BC9D;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body style="background: #6ecff2;">
+		<div class="con">
+			<ul class="tree">
+			<!-- 	<li><span>Category</span>
 					<ul>
-					<li><a href="#">jQuery</a></li>
-					<li><a href="#">jQuery UI</a></li>
-					<li><a href="#">jQuery Mobile</a></li>
+						<li><a href="#">JavaScript</a>
+							<ul>
+								<li><a class="active" href="#">AngularJS</a></li>
+								<li><a href="#">React</a></li>
+								<li><a href="#">Backbone</a>
+									
+								</li>
+							</ul>
+						</li>
 					</ul>
-				</li>
-				<li><a href="#">jQuery UI</a></li>
-				<li><a href="#">jQuery Mobile</a></li>
-				</ul>
-			</li>
-			<li><a href="#">jQuery UI</a></li>
-			<li><a href="#">jQuery Mobile</a></li>
+				</li> -->
+			
 			</ul>
-		  </li>
-        </ul>
-      </li>
-      <li><a href="#suits">Golang</a></li>
-    </ul>
-  </li>
-  <li><a href="#about">About</a>
-    <ul>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Jobs</a>
-        <ul>
-          <li><a href="#jobs1">Job 1</a></li>
-          <li><a href="#jobs2">Job 2</a></li>
-          <li><a href="#jobs3">Job 3</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-<script src="../js/jquery-tree/jquery-1.11.2.min.js"></script> 
-<script src="../js/jquery-tree/jquery.treemenu.js"></script> 
-<script>
-$(function(){
-        $(".tree").treemenu({delay:300}).openActive();
-    });
-</script>
+		</div>
+		
+		<script src="../../js/jquery-tree/jquery-1.11.2.min.js"></script>
+		<script src="../../js/jquery-tree/jquery.treemenu.js"></script>
+		<script src="../../js/common/common.js"></script>
+		<script src="../../js/md5.js"></script>
+		<script>
+			
+			/**
+			* #获取会员关系
+			*/
+			<!-- public function getUserRelation() -->
+			var token = localStorage.getItem('token');
+			var id = localStorage.getItem('id');
+			var data = {"token":token,"user_id":id};
+			common.post('/getUserRelation',data,function(res){
+				console.log(res);
+				if(res.code == 0){
+					var html = "";
+					if(res.data.level_up_data && (res.data.level_up_data.length != 0 && res.data.level_up_data.length) ){
+						html += '<li><span>账号：'+res.data.level_up_data.email+'</span><span>昵称：'+res.data.level_up_data.email+'</span>';
+					}
+					var email = localStorage.getItem('email');
+					var nickname = localStorage.getItem('nickname');
+					html += '<ul><li><span>账号：'+email+'</span><span>昵称：'+nickname+'</span>';
+					if(res.data.level_down_data && res.data.level_down_data.length != 0){
+						var _html = foreach(res.data.level_down_data);
+						html += _html;
+					}
+					html += '</li>';
+					$('.tree').html(html);
+					$(".tree").treemenu({
+						delay: 300
+					}).openActive();
+				}
+			});
+			
+			function foreach(data){
+				var _html = '';
+				for(item of data ){
+					for (let it of item) {
+						_html += '<ul><li><span>账号：'+it.email+'</span><span>昵称：'+it.nickname+'</span>';
+						if(it.children){
+							_html += foreach(it.children);
+						}
+					}
+					_html += '</li></ul>'
+				}
+				return _html;
+			}
+		</script>
+		
 
-
-</body>
+	</body>
 </html>

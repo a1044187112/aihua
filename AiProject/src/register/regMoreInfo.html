@@ -14,10 +14,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="../../css/style.css" rel='stylesheet' type='text/css' />
 <link href="../../css/style-responsive.css" rel="stylesheet"/>
 <!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
 <link rel="stylesheet" href="../css/font.css" type="text/css"/>
 <link href="../../css/font-awesome.css" rel="stylesheet"> 
+<link href="../../css/src/login.css" rel="stylesheet" />
 <!-- //font-awesome icons -->
 <script src="../../js/jquery2.0.3.min.js"></script>
 
@@ -100,36 +99,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			color: #000000;
 			background: rgba(0,0,0,0);
 		}
+		.form-control.input-sm.m-bot15,
+		.select2-selection.select2-selection--single{
+			border: 1px solid white;
+		}
 	</style>
 <div class="reg-w3">
 <div class="w3layouts-main">
 	<h2>Register Now</h2>
 		<form action="#" method="post">
-			<input type="email" class="ggg" name="Email" placeholder="昵称" required="">
-			<input type="text" class="ggg" name="Name" placeholder="姓名" required="">
+			<input type="text" class="ggg" name="nickname" placeholder="昵称" required="">
+			<input type="text" class="ggg" name="real_name" placeholder="姓名" required="">
 			<div class="form-group" style="color: white;">
 				<label class="col-sm-3 control-label col-lg-3 col-xs-3" for="inputSuccess">性别</label>
 				<div class="col-lg-6 col-sm-6 col-xs-6">
 					<label class="checkbox-inline">
-						<input name="sex" type="radio" id="inlineCheckbox1" value="option1"> 男
+						<input name="sex" type="radio" checked="checked" id="inlineCheckbox1" value="0"> 男
 					</label>
 					<label class="checkbox-inline">
-						<input name="sex" type="radio" id="inlineCheckbox2" value="option2"> 女
+						<input name="sex" type="radio" id="inlineCheckbox2" value="1"> 女
 					</label>
 				</div>
 			</div>
 			<div class="code">
 				<!--   证件号类型选择 -->
 				<div class="code_a">
-					<select class="form-control input-sm m-bot15" >
-							<option selected="selected">身份证号</option>
-							<option>护照号</option> 
+					<select name="credential_type" class="form-control input-sm m-bot15" >
+							<option value="0" selected="selected">身份证号</option>
+							<option value="1">护照号</option> 
 					</select>
 				</div>
-				<input type="text" class="ggg" name="Phone" placeholder="证件号" required="">
+				<input type="text" class="ggg" name="credential_id" placeholder="证件号" required="">
 			</div>
 			<div class="head">
-			    <select name="country" class="fastbannerform__country">
+			    <select name="country_id" class="fastbannerform__country">
 			        <option value="ASA" title="AA" >America</option>
 			        <option value="AND" title="AD" >Andorra</option>
 			        <option value="ARE" title="AE" >United Arab Emirates</option>
@@ -334,16 +337,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			        <option value="ZWE" title="ZW" >Zimbabwe</option>
 			    </select>
 			</div>			
-				<div class="clearfix"></div>
-				<input type="submit" value="提交" name="register">
 		</form>
+		<input id="next_btn" type="submit" value="下一步" name="register">
 </div>
 </div>
 <script src="../../js/bootstrap.js"></script>
-<script src="../../js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="../../js/jquery.slimscroll.js"></script>
-<script src="../../js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="../../js/jquery.scrollTo.js"></script>
+<script src="../../js/md5.js"></script>
+<script src="../../js/common/common.js"></script>
+<link href="../../js/tool/tool.css" rel="stylesheet" />
+<script src="../../js/tool/tool.js"></script>
 </body>
+<script>
+	/**
+	* 获取国家数据
+	*/
+	// public function getCountry()
+	function getCountry(){
+		var data = {};
+		common.post('/getCountry',data,function(res){
+			if(res.code == 0){
+				var _html = '';
+				for(var item  of res.data){
+					_html += ' <option value="'+item.id+'" title="'+item.code+'" >'+item.en_name+'</option>';
+				}
+				$('.fastbannerform__country').html(_html);
+			}
+		});
+	}
+	getCountry();
+	
+	
+	$('#next_btn').click(function(){ // 点击提交
+		var nickname = $('[name="nickname"]').val();
+		if(nickname.length == 0 ){
+			tool.remindPopus('提示','请输入昵称');
+			return false;
+		}
+		var real_name = $('[name="real_name"]').val();
+		if(real_name.length == 0 ){
+			tool.remindPopus('提示','请输入真实姓名');
+			return false;
+		}
+		var sex = $('[name="sex"]').val();
+		var credential_type = $('[name="credential_type"]').val();
+		var credential_id = $('[name="credential_id"]').val();
+		if(credential_id.length == 0 ){
+			console.log('credential_id');
+			return false;
+		}
+		var country_id = $('[name="country_id"]').val();
+		
+		var reg_data = JSON.parse(localStorage.getItem("reg_data"));
+		reg_data.trade_password = localStorage.getItem('trade_password');// 交易密码
+		reg_data.nickname = nickname; // 昵称
+		reg_data.real_name = real_name; // 真实姓名
+		reg_data.sex = sex; // 性别 
+		reg_data.credential_type = credential_type;// 证件类型 
+		reg_data.credential_id = credential_id; //证件号
+		reg_data.country_id = country_id; // 地区id
+		register(reg_data);
+	});
+	
+	function register(data){
+		common.post('/register',data,function(res){
+			if(res.code == 0){
+				tool.remindPopus('提示','注册成功，2秒后自动跳转登录页面');
+				setTimeout(function(){
+					window.location.href = '/AiProject/src/login.html';	
+				},1500);
+			}
+		});
+	}
+</script>
 </html>

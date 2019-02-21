@@ -21,167 +21,105 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="../../css/style.css" rel='stylesheet' type='text/css' />
 	<link href="../../css/style-responsive.css" rel="stylesheet" />
 	<!-- font CSS -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
-	 rel='stylesheet' type='text/css'>
 	<!-- font-awesome icons -->
 	<link rel="../../stylesheet" href="css/font.css" type="text/css" />
 	<link href="../../css/font-awesome.css" rel="stylesheet">
+	<link href="../../css/src/record.css" rel="stylesheet" />
 	<!-- //font-awesome icons -->
 	<script src="../../js/jquery2.0.3.min.js"></script>
-</head>
+	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 <style>
-	.menu{
-		width: 90%;
-		margin-top: 20px;
-		text-align: center;
-	}
-	.menu .menu_i{
-		display: inline-block;
-		padding: 0 15px;
-		border-right: 1px solid #080808;
-	}
-	.menu .menu_i.active{
-		color: #7394f3;
-	}
-	.menu .menu_i:last-child{
-		border-right: none;
-	}
-	@media (min-width: 479px) {
-		panel-body{
-			width: 80%;
-			margin: auto;
-		}
-	}
-	.p_c{
-		position: fixed;
-		width: 100%;
-		top: 0;
-		bottom: 0;
-		background: rgba(0,0,0,0.2);
-	}
-	.p_c .popus{
-		margin: auto;
-		background: white;
-		width: 350px;
-		margin-top: 15%;
-		padding: 10px 0;
-		text-align: center;
-		border-radius: 5px;
-	}
-	.p_c .popus .t{
-		font-weight: 600;
-	}
-	.p_c .popus .p_con{
-		border-bottom: 1px solid #E6E6E6;
-		padding: 20px 0;
-		text-align: center;
-	}
-	.p_c .popus .p_btn{
-		border: none;
-		border-radius: 4px;
-		margin-top: 10px;
-		width: 80px;
-		height: 28px;
-		line-height: 28px;
-	}
-	.change_p_btn{
-		text-align: center;
-	}
-	@media (min-width: 768px){
-		.from_select_type{
-			width: 49% !important;
-			margin-right: 15px;
-		}
-	}
-	.from_selec_re{
-		padding-left: 15px;
-	}
-	.from_selec_re .from_selec_re_v{
-		font-size: 18px;
-		color: #FF0000;
-	}
-	.tips{
-		width: 80%;
-		margin: auto;
-		font-size: 14px;
-		line-height: 28px;
-		font-weight: 600;
+	select,input{
+		color: white !important;
 	}
 </style>
-<body>
+</head>
+<body style="background: #6ecff2;">
 	<div class="row">
 		<div class="col-lg-12">
+			<div class="wd row">
+				<div class="wd_item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<div class="wd_item_t">收益</div>
+						<div class="wd_item_v this_day_income">5000$</div>
+						<canvas id="container1" width="750px" height="220px"></canvas>
+				</div>
+				<div class="wd_item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<div class="wd_item_t">本金</div>
+						<div class="wd_item_v balance">5000$</div>
+						<canvas id="container2" width="750px" height="220px"></canvas>
+				</div>
+			</div>
 			<!--  修改交易密码 -->
-			<section class="panel">
-				<header class="panel-heading">
-					提现
-				</header>
+			<section class="panel panel_con">
+				<div class="tips">
+					<div class="tips_t">*提现说明</div>
+					<div class="tips_info">
+							收益提现时可提现余额必须>50$,扣除10%手续费;本金提现时金额不限制，扣除10%手续费。
+					</div>
+				</div>
 				<div class="panel-body">
 					<form class="form-horizontal bucket-form" method="get">
 						<div class="form-group">
-							<label class="col-sm-3 control-label">提现类型</label>
-							<select class="form-control m-bot15 col-sm-6 from_select_type">
-								<option>收益提现</option>
-								<option>本金提现</option>
+							<label class="col-sm-2 control-label">提现类型</label>
+							<select class="form-control m-bot15 col-lg-6 col-md-6 col-sm-6 col-xs-12 from_select_type">
+								<option value="1">收益提现</option>
+								<option value="0">出金</option>
 							</select>
-							<span class="help-block from_selec_re">可提现收益：<span class="from_selec_re_v">4812$</span></span>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">提现金额</label>
+							<label class="col-sm-2 control-label">提现金额:</label>
 							<div class="col-sm-6">
-								<input type="password" class="form-control">
+								<input onblur="balanceBlur()" name="balance" type="text" class="form-control">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">实际到账金额</label>
+							<label class="col-sm-2 control-label">实际到账金额:</label>
+							<div class="col-sm-6">
+								<input disabled="disabled" name="con_balance" type="text" class="form-control">
+							</div>
+						</div>
+						<!-- <div class="form-group">
+							<label class="col-sm-2 control-label">账户名称:</label>
 							<div class="col-sm-6">
 								<input type="password" class="form-control">
 							</div>
+						</div> -->
+						<div class="form-group">
+							<label class="col-sm-2 control-label">提现账号:</label>
+								<div class="col-sm-6">
+							<input name="account" type="text" class="form-control">
+						</div>
+						<!-- </div>
+							<div class="form-group">
+							<label class="col-sm-2 control-label">其他账户资料:</label>
+								<div class="col-sm-6">
+							<input type="password" class="form-control">
+						</div> -->
 						</div>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">账户名称</label>
+							<label class="col-sm-2 control-label">交易密码:</label>
 							<div class="col-sm-6">
-								<input type="password" class="form-control">
-								<!-- <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span> -->
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">交易密码</label>
-							<div class="col-sm-6">
-								<input type="password" class="form-control round-input">
+								<input id="password" type="password" class="form-control round-input">
 							</div>
 						</div>
 						<div class="change_p_btn">
-							<button class="btn btn-primary" type="submit">提交</button>
-						</div>
-					</form>
+							</div>
+						</form>
+					<button class="btn btn-primary" type="submit">提交</button>
 				</div>
 			</section>
-			<div class="tips">
-				<div class="tips_t">*提现说明</div>
-				<div class="tips_info">
-					  收益提现时可提现余额必须>50$,扣除10%手续费;本金提现时金额不限制，扣除10%手续费。
-				</div>
-			</div>
+		
 		</div>
 	</div>
 
-	<div class="p_c" style="display: none;">
-		<div class="popus">
-			<div class="t">提示</div>
-			<div class="p_con">请先在个人设置中绑定数字币账号！</div>
-			<button class="p_btn btn-primary">确定</button>
-		</div>
-	</div>
 
 
 	<script src="../../js/bootstrap.js"></script>
-	<script src="../../js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="../../js/scripts.js"></script>
-	<script src="../../js/jquery.slimscroll.js"></script>
-	<script src="../../js/jquery.nicescroll.js"></script>
-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-	<script src="../../js/jquery.scrollTo.js"></script>
+<script src="../../js/src/withdraw.js"></script>
+<script src="../../js/common/common.js"></script>
+<script src="../../js/md5.js"></script>
+<link href="../../js/tool/tool.css" rel="stylesheet" />
+<script src="../../js/tool/tool.js "></script>
 </body>
 <script>
 	$(document).ready(function() {
@@ -195,5 +133,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			$('.p_c').css('display', 'none');
 		});
 	});
+	
+	withdraw.init();
+	
+	//   用户本金
+	var balance = localStorage.getItem('balance');
+	$('.wd_item_v.balance').text(parseInt(balance/100)+"$");
+	// 用户收益
+	$(".this_day_income").text(parseInt(balance)/100*0.03*0.7+"$");
+	
+	/**
+     * #会员提现
+     * @post type 提现类型 0：本金 1：收益
+     * ～@post price 提现金额 (type=1时必填)
+     * @exception 102 已成为该等级会员
+     * @exception 103 需升级等级不存在
+     * @exception 104 需升级等级低于当前等级
+     * @exception 105 已存在升级信息
+     * @exception 106 升级信息创建失败
+     */
+    // public function setUserWithdrawal()
+	$('.btn-primary').click(function(){
+		var type = $('.from_select_type').val();
+		var balance = $('[name="balance"]').val();
+		if(balance<50){
+			tool.remindPopus('提示',"提现金额不能小于50$");
+			return false;
+		}
+		$('[name="con_balance"]').val(balance*0.9); // 实际到账金额
+		
+		var account = $('[name="account"]').val(); // 账户
+		if(account.length == 0){
+			tool.remindPopus('提示',"请输入提现账户");
+			return false;
+		}
+		var password = $('#password').val(); // 密码
+		if(password.length < 6){
+			tool.remindPopus('提示',"请输入交易密码");
+			return false;
+		}
+		var token = localStorage.getItem('token');
+		var id = localStorage.getItem('id'); // 用户id 
+		var data = {"token":token,"user_id":id,"type":type,"price":balance*100};
+		common.post('/setUserWithdrawal',data,function(res){
+			console.log(res);
+			if(res.code == 0){
+				tool.remindPopus('提示',"提交成功！");
+			}
+		});
+	});
+	function balanceBlur(){
+		var balance = $('[name="balance"]').val();
+		$('[name="con_balance"]').val(balance*0.9); // 实际到账金额
+	}
 </script>
 </html>

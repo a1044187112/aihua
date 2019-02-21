@@ -13,9 +13,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Custom CSS -->
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
 <link href="../css/style-responsive.css" rel="stylesheet"/>
-<!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
 <link rel="stylesheet" href="../css/font.css" type="text/css"/>
 <link href="../css/font-awesome.css" rel="stylesheet"> 
 <link href="../css/src/plan.css" rel="stylesheet" />
@@ -58,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<span class="head_icon">$</span>
 								<span class="head_title">今日收益</span>
 							</div>
-							<div class="head_c">2$</div>
+							<div class="head_c this_day_income">2$</div>
 							<canvas id="d_canvas_a" width="350px" height="200px"></canvas>
 						</div>
 					</li>
@@ -69,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span>最终收入</span><span>280$</span>
 								</div>
 								<div class="head_canvas_f">
-									<canvas id="end_canvas" width="350px" height="200px"></canvas>
+									<canvas id="end_canvas" width="370px" height="200px"></canvas>
 								</div>
 								
 								<div class="end_r_1 end_r_n">
@@ -94,7 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<span class="head_title">总收益</span>
 							</div>
 							<div class="head_c">32$</div>
-							<canvas id="all_canvas_a" width="350px" height="200px"></canvas>
+							<canvas id="all_canvas_a" width="370px" height="200px"></canvas>
 						</div>
 					</li>
 				</ul>
@@ -102,6 +99,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="info container">
 				<div class="info_i row">
 					<div class=" item col-lg-3 col-md-3 col-sm-12 col-xs-12">
+						<div class="a_stauts">
+							<img src="../images/2.png" />
+							<div class="a_s_i">
+								<span class="a_s_i_t">账户余额: </span>
+								<span class="a_s_i_val balance">0$</span>
+							</div>
+							<div class="a_s_i a_s_s">
+								<span class="a_s_i_t">账户状态: </span>
+								<span class="a_s_i_val status active">开启后开始计算收益</span>
+							</div>
+							<div class="a_s_btn a_s_start">启动（扣除10%）</div>
+							<div class="a_s_btn a_s_end">停止（恢复10%）</div>
+						</div>
 						<div class="account">
 							<div class="acc_name">test1234</div>
 							<ul class="acc_ul">
@@ -171,15 +181,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 <script src="../js/bootstrap.js"></script>
-<script src="../js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="../js/scripts.js"></script>
-<script src="../js/jquery.slimscroll.js"></script>
-<script src="../js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="../js/jquery.scrollTo.js"></script>
-<script src="../js/src/indexM.js"></script>
-<script src="../js/src/indexK1.js"></script>
-<script src="../js/src/indexk2.js"></script>
+<script src="../js/src/index/indexM.js"></script>
+<script src="../js/src/index/indexK1.js"></script>
+<script src="../js/src/index/indexk2.js"></script>
+<script src="../js/src/index/index.js"></script>
+<script src="../js/md5.js"></script>
+<script src="../js/common/common.js"></script>
 <script>
 	$(document).ready(function(){
 		var count = 1 ;
@@ -200,6 +207,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	indexk2.init(); // 比特币 以太币
 	
 	indexM.init();// 收益图
+	
+	index.init();  // zhu js
+	
+	/**
+     * 获取平台配置信息
+     */
+    // public function getConfig()
+	function getConfig(){
+		var token = localStorage.getItem('token');
+		var id = localStorage.getItem('id');
+		var data = {"token":token,"user_id":id};
+		common.post('/getConfig',data,function(res){
+			if(res.code == 0){
+				localStorage.setItem('reward_track_ratio',res.data.reward_track_ratio); // 静态收益
+				localStorage.setItem("wallet_address",res.data.wallet_address); // 后台钱包地址
+			}
+		});
+	}
+	getConfig();
 </script>
 </body>
 </html>

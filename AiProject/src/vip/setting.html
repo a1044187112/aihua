@@ -12,97 +12,127 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Custom CSS -->
 <link href="../../css/style.css" rel='stylesheet' type='text/css' />
 <link href="../../css/style-responsive.css" rel="stylesheet"/>
-<!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
 <link rel="../../stylesheet" href="css/font.css" type="text/css"/>
 <link href="../../css/font-awesome.css" rel="stylesheet"> 
 <link rel="stylesheet" href="../../css/src/setting.css" />
 <!-- //font-awesome icons -->
 <script src="../../js/jquery2.0.3.min.js"></script>
 </head>
-<body>
-	<div class="con">
-		<div class="con_t">
-			<span class="con_t">个人资料</span>
-			<span class="con_edit">
-				<button class="btn btn-primary" type="submit">编辑</button>
-			</span>
-			<button class="btn btn-primary" type="submit">提交</button>
+<body style="background: #6ecff2;">
+	<div class="con row">
+		<div class="con_t col-lg-2 col-md-3 col-sm-4 col-xs-12">
+			<div class="con_t_v">
+				<img src="../../images/2.png" />
+				<div class="con_t_leavl">TR会员</div>
+			</div>
 		</div>
-		<ul class="con_ul">
+		<ul class="con_ul col-lg-10 col-md-9 col-sm-8 col-xs-12">
 			<li class="con_li">
 				<span class="con_li_t">用户ID：</span>
-				<span class="con_li_val">465154</span>
+				<span class="con_li_val"><input disabled="disabled" class="item id" value=""/></span>
 			</li>
 			<li class="con_li">
 				<span class="con_li_t">证件号：</span>
-				<span class="con_li_val">465154</span>
+				<span class="con_li_val"><input disabled="disabled" class="item code" value=""/></span>
 			</li>
 			<li class="con_li">
-				<span class="con_li_t">名称：</span>
-				<span class="con_li_val"><input class="item edit" value="465154"/></span>
+				<span class="con_li_t">昵称：</span>
+				<span class="con_li_val"><input disabled="disabled" class="item  name" value=""/></span>
 			</li>
 			<li class="con_li">
 				<span class="con_li_t">推荐人：</span>
-				<span class="con_li_val">465154</span>
+				<span class="con_li_val"><input disabled="disabled" class="item up_name" value=""/></span>
 			</li>
 			<li class="con_li">
 				<span class="con_li_t">性别：</span>
-				<span class="con_li_val">男</span>
+				<span class="con_li_val"><input disabled="disabled" class="item sex" value=""/></span>
 			</li>
 			<li class="con_li">
 				<span class="con_li_t">提现账户：</span>
-				<span class="con_li_val"><input class="item edit" value="465154"/></span>
-			</li>
-			<li class="con_li">
-				<span class="con_li_t">生日：</span>
-				<span class="con_li_val">465154</span>
-			</li>
-			<li class="con_li">
-				<span class="con_li_t">账户名称：</span>
-				<span class="con_li_val">465154</span>
+				<span class="con_li_val"><input class="item edit account_w" value=""/></span>
 			</li>
 			<li class="con_li">
 				<span class="con_li_t">城市：</span>
-				<span class="con_li_val">465154</span>
-			</li>
-			<li class="con_li">
-				<span class="con_li_t">账户其他：</span>
-				<span class="con_li_val">465154</span>
+				<span class="con_li_val"><input disabled="disabled" class="item country" value=""/></span>
 			</li>
 			<li class="con_li">
 				<span class="con_li_t">注册时间：</span>
-				<span class="con_li_val">465154</span>
+				<span class="con_li_val"><input disabled="disabled" class="item reg_time" value=""/></span>
 			</li>
-			<li class="con_li">
-				<span class="con_li_t">用户来源：</span>
-				<span class="con_li_val">465154</span>
+			<li class="con_btn">
+				<div class="con_btn_b con_btn_edit">编辑资料</div>
+				<div class="con_btn_b con_btn_save" style="display: none;">保存修改</div>
 			</li>
 		</ul>
+		
 	</div>
 	<div>
 		
 	</div>
 
 <script src="../../js/bootstrap.js"></script>
-<script src="../../js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="../../js/scripts.js"></script>
-<script src="../../js/jquery.slimscroll.js"></script>
-<script src="../../js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="../../js/jquery.scrollTo.js"></script>
+<script src="../../js/md5.js"></script>
+<script src="../../js/common/common.js"></script>
 </body>
 <script>
-	$(document).ready(function(){
-		$('.p_c').click(function(e){
-			e.stopPropagation();
-			if(e.currentTarget == e.target){
-				$('.p_c').css('display','none');
+	/**
+     * #获取用户数据
+     */
+    // public function getUserInfo()
+	function getUserInfo(){
+		var token = localStorage.getItem('token');
+		var id = localStorage.getItem('id');
+		var data = {"token":token,"user_id":id};
+		common.post('/getUserInfo',data,function(res){
+			console.log(res);
+			if(res.code == 0){
+				$('.id').val(res.data.id);
+				$('.code').val(res.data.credential_id);
+				$('.name').val(res.data.nickname);
+				$('.up_name').val(res.data.p_email);
+				$('.sex').val(res.data.sex==0?"男":"女");
+				$('.account_w').val(res.data.withdraw_account);
+				$('.acc_name').val(res.data.id);
+				$('.country').val(res.data.country.en_name);
+				$('.con_t_leavl').text(res.data.level);
+				var date = new Date(res.data.create_time*1000);
+				$('.reg_time').val(date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate());// 注册时间
+				
 			}
 		});
-		$('.p_btn').click(function(){
-			$('.p_c').css('display','none');
+	}
+	getUserInfo();
+	
+	//  点击编辑资料
+	$(".con_btn_edit").click(function(){
+		$('.con_btn_save').css('display',"inline-block");
+		$('input.edit').css("border","1px solid #2583c2");		
+	});
+	// 点击保存 
+	/**
+     * #修改用户数据
+     * ～@post withdraw_account 提现账户
+     * @exception 102 用户信息修改失败
+     */
+    // public function setUserInfo()
+	$('.con_btn_save').click(function(){
+		var account_w = $('input.account_w').val();
+		if(account_w.length == 0){
+			alert('请输入提现账户');
+			return false;
+		}
+		var token = localStorage.getItem('token');
+		var id = localStorage.getItem('id');
+		var data = {"token":token,"user_id":id,"withdraw_account":account_w};
+		common.post('/setUserInfo',data,function(res){
+			console.log(res);
+			if(res.code == 0){
+				alert('修改成功');
+				$('.con_btn_save').css('display',"none");
+				$('input.edit').css("border","none");	
+			}else if(res.code == 102){
+				alert('修改失败');
+			}
 		});
 	});
 </script>

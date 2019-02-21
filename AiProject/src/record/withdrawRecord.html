@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Responsive_table :: w3layouts</title>
+	<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Form_validation :: w3layouts</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -20,48 +20,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- Custom CSS -->
 	<link href="../../css/style.css" rel='stylesheet' type='text/css' />
 	<link href="../../css/style-responsive.css" rel="stylesheet" />
-	<!-- font CSS -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
-	 rel='stylesheet' type='text/css'>
 	<!-- font-awesome icons -->
 	<link rel="../../stylesheet" href="css/font.css" type="text/css" />
 	<link href="../../css/font-awesome.css" rel="stylesheet">
+	<link href="../../css/src/record.css" rel="stylesheet" />
 	<!-- //font-awesome icons -->
 	<script src="../../js/jquery2.0.3.min.js"></script>
+	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 
-	<!--   时间选择组件 -->
-	<link href="../../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
 </head>
-<style>
-	.tr{
-		width: 94%;
-		margin: auto;
-		padding: 15px 0;
-	}
-	.tr .tr_title{
-		font-weight: 600;
-		font-size: 14px;
-	}
-	.tr .tr_info{
-		margin-left: 30px;
-		font-size: 14px;
-	}
-	.tr .tr_info .tr_i_v{
-		font-size: 18px;
-		font-weight: 600;
-		color: #FF0000;
-	}
-</style>
-<body>
-	<div class="tr">
-		<span class="tr_title">提现记录</span>
-		<span class="tr_info">当前余额：<span class="tr_i_v">54851$</span></span>
+<body style="background: #6ecff2;">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="wd row">
+				<div class="wd_item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+					<div class="wd_item_t">账户余额</div>
+					<div class="wd_item_v">5000$</div>
+					<canvas id="container1" width="750px" height="220px"></canvas>
+				</div>
+			</div>
+
+
+		</div>
 	</div>
 
-	<div class="table-agile-info">
-		<div class="panel panel-default">
+
+	<div class="rec">
+		<div class="rec_c">
 			<div class="date_search">
 				<!--  日期选择 -->
 				<div class="form-group date_form_group">
@@ -86,9 +71,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 
 			</div>
-
 			<div>
-				<table class="table" ui-jq="footable" ui-options='{
+				<table class="rec_table" ui-jq="footable" ui-options='{
         "paging": {
           "enabled": true
         },
@@ -100,12 +84,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }}'>
 					<thead>
 						<tr>
-							<th data-breakpoints="xs">类型</th>
-							<th>账户</th>
-							<th>推荐会员</th>
-							<th data-breakpoints="xs">会员金额</th>
-							<th data-breakpoints="xs sm md" data-title="DOB">会员等级</th>
-							<th data-breakpoints="xs sm md" data-title="DOB">注册日期</th>
+							<th data-breakpoints="xs" style="min-width: 50px;">ID</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th data-breakpoints="xs">Job Title</th>
+
+							<th data-breakpoints="xs sm md" data-title="DOB">Date of Birth</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -157,38 +141,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 							<td>August 4th 1991</td>
 						</tr>
-						<tr>
-							<td>7</td>
-							<td>Usha</td>
-							<td>Leak</td>
-							<td>Ships Electronic Warfare Officer</td>
-
-							<td>November 20th 1979</td>
-						</tr>
-						<tr>
-							<td>8</td>
-							<td>Lorriane</td>
-							<td>Cooke</td>
-							<td>Technical Services Librarian</td>
-
-							<td>April 7th 1969</td>
-						</tr>
-						<tr>
-							<td>9</td>
-							<td>Lorriane</td>
-							<td>Cooke</td>
-							<td>Technical Services Librarian</td>
-
-							<td>April 7th 1969</td>
-						</tr>
-						<tr>
-							<td>10</td>
-							<td>Lorriane</td>
-							<td>Cooke</td>
-							<td>Technical Services Librarian</td>
-
-							<td>April 7th 1969</td>
-						</tr>
 					</tbody>
 				</table>
 			</div>
@@ -212,25 +164,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</footer>
 	</div>
-
 	<script src="../../js/bootstrap.js"></script>
-	<script src="../../js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="../../js/scripts.js"></script>
-	<script src="../../js/jquery.slimscroll.js"></script>
-	<script src="../../js/jquery.nicescroll.js"></script>
-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-	<script src="../../js/jquery.scrollTo.js"></script>
-	<script>
-		$('.form_date').datetimepicker({
-			language: 'fr',
-			weekStart: 1,
-			todayBtn: 1,
-			autoclose: 1,
-			todayHighlight: 1,
-			startView: 2,
-			minView: 2,
-			forceParse: 0
-		});
-	</script>
+	<script src="../../js/src/withdraw.js"></script>
 </body>
+<script>
+	$(document).ready(function() {
+		$('.p_c').click(function(e) {
+			e.stopPropagation();
+			if (e.currentTarget == e.target) {
+				$('.p_c').css('display', 'none');
+			}
+		});
+		$('.p_btn').click(function() {
+			$('.p_c').css('display', 'none');
+		});
+	});
+
+	withdraw.init();
+</script>
 </html>

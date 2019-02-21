@@ -1,0 +1,205 @@
+/*  个人入金记录 */
+.tr{
+	width: 100%;
+	margin: auto;
+}
+.tr .tr_item .tr_i{
+	width: 100%;
+	background: #3e3e3e;
+	border-radius: 8px;
+	text-align: left;
+	margin: auto;
+	margin-top: 20px;
+	padding: 30px 0;
+}
+.tr .tr_item .tr_i img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-left: 10%;
+}
+.tr .tr_item .tr_i .tr_i_i{
+	display: inline-block;
+	color: white;
+	vertical-align: middle;
+	text-align: left;
+	margin-left: 12px;
+}
+.tr .tr_item .tr_i .tr_i_i .tr_i_t{
+	color: rgb(171,171,171);
+	font-size: 13px;
+}
+.tr .tr_item .tr_i .tr_i_i .tr_i_v{
+	font-size: 18px;
+	margin-top: 3px;
+}
+.tr .tr_item .tr_i .tr_i_btn{
+	float: right;
+	margin-right: 15px;
+	margin-top: 18px;
+	display: inline-block;
+	color: white;
+	padding: 2px 15px;
+	border: 1px solid white;
+	vertical-align: bottom;
+}
+
+
+/* table 和 时间查询插件  */
+.rec{
+	width: 97%;
+	margin: auto;
+	background: #3e3e3e;
+	margin-top: 20px;
+	border-radius: 8px;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+.rec .rec_t{
+	color: white;
+	height: 42px;
+	text-indent: 3%;
+	line-height: 42px;
+	font-size: 16px;
+}
+.rec .rec_c .date_search{
+	background: #505050;
+	padding-bottom: 10px;
+	padding-top: 0;
+}
+.rec .date_search{
+	text-align: right;
+	padding-right: 15px;
+}
+.rec .form_date {
+	background: #000000;
+	border-radius: 4px;
+}
+.rec .form_date .form-control{
+	border: none;
+	background: #000000;
+	color: white;
+}
+.rec .form_date .input-group-addon{
+	background: #000000;
+	border: none;
+}
+.rec .form_date .glyphicon-calendar{
+	color: white;
+}
+.rec .date_s_z{
+	margin-right: 5px;
+	color: white;
+}
+.rec .date_search .form-group {
+	margin-left: 0;
+}
+.rec .rec_table{
+	width: 100%;
+	color: white;
+	text-align: center;
+	font-weight: 14px;
+}
+.rec .rec_table tr{
+	height: 42px;
+	line-height: 42px;
+}
+.rec .rec_table tr th{
+	text-align: center;
+}
+.rec .panel-footer{
+	background: #3a3a3a;
+	margin-top: -2px;
+}
+
+/*  提现  */
+.wd{
+	margin: auto;
+	/* margin-left: 15px; */
+	margin-top: 20px;
+}
+.wd .wd_item{
+	background: #3e3e3e;
+	border-radius: 8px;
+	margin: 0 15px;
+	padding-top: 20px;
+	height: 160px;
+	overflow: hidden;
+}
+@media (max-width:479px) {
+	.wd .wd_item{
+		margin: 0;
+	}
+}
+.wd .wd_item .wd_item_t{
+	color: white;
+	font-size: 18px;
+}
+.wd .wd_item .wd_item_v{
+	text-align: center;
+	font-size: 28px;
+	color: #2583c2;
+}
+#container1,#container2{
+	position: absolute;
+	top: 50px;
+	left: -110px;
+}
+
+.panel_con{
+	width: 97%;
+	margin: auto;
+	margin-top: 20px;
+	background: #3A3A3A;
+	border-radius: 8px;
+	color: white;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+.panel_con .tips{
+	background: #505050;
+	line-height: 28px;
+	text-indent: 3%;
+	padding: 8px 0;
+	font-size: 14px;
+}
+.panel_con .tips .tips_info{
+	font-size: 16px;
+}
+.panel_con .panel-body{
+	padding: 50px 0;
+}
+.panel_con .panel-body .form-group{
+	text-align: left;
+}
+.panel_con .change_p_btn{
+	/* text-align: center; */
+}
+.panel_con .change_p_btn .btn-primary{
+	width: 140px;
+	margin-left: 25%;
+}
+.panel_con .from_select_type{
+	width: 47% ;
+	margin-left: 1.4%;
+	background: #000000;
+}
+@media (min-width: 768px) and (max-width: 1980px) {
+	.panel_con .from_select_type{
+		width: 47% !!important;
+		margin-left: 1.4%;
+		background: #000000;
+	}
+}
+
+@media (max-width:768px){
+	.panel_con .from_select_type{
+		width: 96% ;
+		margin-left: 1.2%;
+	}
+}
+.panel_con .form-group input{
+	background: #000000;
+	outline: none;
+	border: 1px solid white;
+}

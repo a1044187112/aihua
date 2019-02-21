@@ -21,77 +21,106 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="../../css/style.css" rel='stylesheet' type='text/css' />
 	<link href="../../css/style-responsive.css" rel="stylesheet" />
 	<!-- font CSS -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
-	 rel='stylesheet' type='text/css'>
 	<!-- font-awesome icons -->
 	<link rel="../../stylesheet" href="css/font.css" type="text/css" />
 	<link href="../../css/font-awesome.css" rel="stylesheet">
-	<link rel="stylesheet" href="../../css/src/income.css" />
+	<link href="../../css/src/record.css" rel="stylesheet" />
+	<link href="../../css/src/income.css" rel="stylesheet"/>
 	<!-- //font-awesome icons -->
 	<script src="../../js/jquery2.0.3.min.js"></script>
-	 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-	
-	<!--   时间选择组件 -->
+
 	<link href="../../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
-	</head>
 </head>
-<style>
-	.record_t{
-		width: 90%;
-		font-weight: 600;
-		margin: auto;
-		margin-bottom: 15px;
-	}
-</style>
-<body>
-
-	<div class="con container">
-		<ul class="con_ul">
-			 <li class="con_li">
-				 <span class="con_li_t">总入金：</span><span class="con_li_v">10000$</span>
-			 </li>
-			 <li class="con_li">
-			 	<span class="con_li_t">今日收益：</span><span class="con_li_v">100$</span>
-			 </li>
-			 <li class="con_li">
-				<span class="con_li_t">今日收益点：</span><span class="con_li_v">1%</span>
-			 </li>
-		</ul>
+<body style="background: #6ecff2;">
+	<div class="tr row">
+		<div class="tr_item col-lg-4 col-md-4 col-sm-6 col-xs-12">
+			<div class="tr_i">
+				<img src="../../images/icon/totalgold.png" />
+				<div class="tr_i_i">
+					<span class="tr_i_t">当前总入金</span>
+					<div class="tr_i_v">286465134$</div>
+				</div>
+			</div>
+		</div>
+		<div class="tr_item col-lg-4 col-md-4 col-sm-6 col-xs-12">
+			<div class="tr_i">
+				<img src="../../images/icon/Yield.png" />
+				<div class="tr_i_i">
+					<span class="tr_i_t">今日收益</span>
+					<div class="tr_i_v">286465134$</div>
+				</div>
+			</div>
+		</div>
+		<div class="tr_item col-lg-4 col-md-4 col-sm-6 col-xs-12">
+			<div class="tr_i">
+				<img src="../../images/icon/Yield_point.png" />
+				<div class="tr_i_i">
+					<span class="tr_i_t">今日收益点</span>
+					<div class="tr_i_v">28646$</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="in_con row">
+			<div class="in_c col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<canvas id="canvas" width="600px" height="300px"></canvas>
+			</div>
+			<ul class="in_table">
+					<li class="in_li">
+						<span class="in_l_i">货币</span><span class="in_l_i">购入率</span><span class="in_l_i">提现汇率</span>
+					</li>
+					<li class="in_li">
+						<span class="in_l_i">BTC</span><span class="in_l_i">6.7%</span><span class="in_l_i">6.7%</span>
+					</li>
+					<li class="in_li">
+						<span class="in_l_i">BTC</span><span class="in_l_i">6.7%</span><span class="in_l_i">6.7%</span>
+					</li>
+					<li class="in_li">
+						<span class="in_l_i">BTC</span><span class="in_l_i">6.7%</span><span class="in_l_i">6.7%</span>
+					</li>
+					<li class="in_li">
+						<span class="in_l_i">BTC</span><span class="in_l_i">6.7%</span><span class="in_l_i">6.7%</span>
+					</li>
+					<li class="in_li">
+						<span class="in_l_i">BTC</span><span class="in_l_i">6.7%</span><span class="in_l_i">6.7%</span>
+					</li>
+					<li class="in_li">
+						<span class="in_l_i">BTC</span><span class="in_l_i">6.7%</span><span class="in_l_i">6.7%</span>
+					</li>
+			</ul>
 	</div>
 	
-	<div id="container" style="height: 330px;width: 94%;margin: auto;"></div>
-	
-		<div class="record_t">收益记录</div>
-	 <div class="table-agile-info">
-		 <div class="date_search">
-		 				<!--  日期选择 -->
-		 				<div class="form-group date_form_group">
-		 					<div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2"
-		 					 data-link-format="yyyy-mm-dd">
-		 						<input class="form-control" size="16" type="text" value="" readonly placeholder="开始时间">
-		 						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-		 					</div>
-		 					<input type="hidden" id="dtp_input1" value="" />
-		 				</div>
-		 				<div class="date_s_z">至</div>
-		 				<div class="form-group date_form_group">
-		 					<div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2"
-		 					 data-link-format="yyyy-mm-dd">
-		 						<input class="form-control" size="16" type="text" value="" readonly placeholder="结束时间">
-		 						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-		 					</div>
-		 					<input type="hidden" id="dtp_input2" value="" />
-		 				</div>
-		 				<div class="date_btn">
-		 					<button class="btn btn-primary" type="submit">查询</button>
-		 				</div>
-		 
-		 			</div>
-		<div class="panel panel-default">
+	<div class="rec">
+
+		<div class="rec_c">
+			<div class="date_search">
+				<!--  日期选择 -->
+				<div class="form-group date_form_group">
+					<div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+					 data-link-format="yyyy-mm-dd">
+						<input class="form-control" size="16" type="text" value="" readonly placeholder="开始时间">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+					</div>
+					<input type="hidden" id="dtp_input1" value="" />
+				</div>
+				<div class="date_s_z">至</div>
+				<div class="form-group date_form_group">
+					<div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+					 data-link-format="yyyy-mm-dd">
+						<input class="form-control" size="16" type="text" value="" readonly placeholder="结束时间">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+					</div>
+					<input type="hidden" id="dtp_input2" value="" />
+				</div>
+				<div class="date_btn">
+					<button class="btn btn-primary" type="submit">查询</button>
+				</div>
+
+			</div>
 			<div>
-				<table class="table" ui-jq="footable" ui-options='{
+				<table class="rec_table" ui-jq="footable" ui-options='{
         "paging": {
           "enabled": true
         },
@@ -103,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }}'>
 					<thead>
 						<tr>
-							<th data-breakpoints="xs">ID</th>
+							<th data-breakpoints="xs" style="min-width: 50px;">ID</th>
 							<th>First Name</th>
 							<th>Last Name</th>
 							<th data-breakpoints="xs">Job Title</th>
@@ -160,87 +189,70 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 							<td>August 4th 1991</td>
 						</tr>
-						<tr>
-							<td>7</td>
-							<td>Usha</td>
-							<td>Leak</td>
-							<td>Ships Electronic Warfare Officer</td>
-
-							<td>November 20th 1979</td>
-						</tr>
 					</tbody>
 				</table>
 			</div>
-			<footer class="panel-footer">
-						<div class="row">
-			
-							<div class="col-sm-5 text-center">
-								<!-- <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small> -->
-							</div>
-							<div class="col-sm-7 text-right text-center-xs">
-								<ul class="pagination pagination-sm m-t-none m-b-none">
-									<li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-									<li><a href="">1</a></li>
-									<li><a href="">2</a></li>
-									<li><a href="">3</a></li>
-									<li><a href="">4</a></li>
-									<li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</footer>
-		</div> 
-		
-</div>
+		</div>
+		<footer class="panel-footer">
+			<div class="row">
+
+				<div class="col-sm-5 text-center">
+					<!-- <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small> -->
+				</div>
+				<div class="col-sm-7 text-right text-center-xs">
+					<ul class="pagination pagination-sm m-t-none m-b-none">
+						<li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+						<li><a href="">1</a></li>
+						<li><a href="">2</a></li>
+						<li><a href="">3</a></li>
+						<li><a href="">4</a></li>
+						<li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+
 	<script src="../../js/bootstrap.js"></script>
-	<script src="../../js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="../../js/scripts.js"></script>
-	<script src="../../js/jquery.slimscroll.js"></script>
-	<script src="../../js/jquery.nicescroll.js"></script>
-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-	<script src="../../js/jquery.scrollTo.js"></script>
+ <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 </body>
 <script>
-		$(document).ready(function(){
-			$('.table_p').click(function(e){
-				e.stopPropagation();
-				if(e.currentTarget == e.target){
-					$(this).css('display','none');
-				}
-			});
-			
-			$('.con_l .item').click(function(){
-				$('.table_p').css('display','block');
-			});
-		});
-		
-		$('.form_date').datetimepicker({
-			language:  'fr',
-			weekStart: 1,
-			todayBtn:  1,
-			autoclose: 1,
-			todayHighlight: 1,
-			startView: 2,
-			minView: 2,
-			forceParse: 0
-		});
-		
-		option = {
-			xAxis: {
-					type: 'category',
-					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-			},
-			yAxis: {
-					type: 'value'
-			},
-			series: [{
-					data: [820, 932, 901, 934, 1290, 1330, 1320],
-					type: 'line',
-					smooth: true
-			}]
-	};
-	var dom = document.getElementById("container");
-	var myChart = echarts.init(dom);
-	myChart.setOption(option, true);
+	$('.form_date').datetimepicker({
+		language: 'fr',
+		weekStart: 1,
+		todayBtn: 1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+	});
+	
+	var dom = document.getElementById("canvas");
+	myChart = echarts.init(dom);
+	option = {
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+				axisLine:{
+					lineStyle:{
+						color:"#ffffff",
+					}
+				},
+    },
+    yAxis: {
+        type: 'value',
+				axisLine:{
+					lineStyle:{
+						color:"#ffffff",
+					}
+				},
+    },
+    series: [{
+        data: [5, 3, 8, 10, 15, 18, 19],
+        type: 'line'
+    }]
+};
+myChart.setOption(option, true);
 </script>
 </html>

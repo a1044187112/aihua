@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Login :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="../../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../../css/style-responsive.css" rel="stylesheet"/>
+<!-- font CSS -->
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="../css/font.css" type="text/css"/>
+<link href="../../css/font-awesome.css" rel="stylesheet"> 
+<link href="../../css/src/plan.css" rel="stylesheet" />
+<!-- //font-awesome icons -->
+<script src="../../js/jquery2.0.3.min.js"></script>
+</head>
+<body style="background: #6ecff2;">
+	<aside>
+		<div class="con container"> 
+			<ul class="con_ul row" id="plan_ul">
+				<!-- <li class="con_li col-lg-4 col-md-4 col-sm-6 col-xs-12">
+					<div class="item">
+						<img src="../images/3.png" />
+						<div class="con_li_t">BOT1000</div>
+						<div class="con_li_t1">U$1000</div>
+						<div class="con_li_t2">1Bots</div>
+						<div class="con_li_t2">每日收益1%</div>
+						<div class="con_li_t2">up to 2.5%</div>
+						<button class="con_li_btn">升级</button>
+					</div>
+				</li>
+				<li class="con_li col-lg-4 col-md-4 col-sm-6 col-xs-12">
+					<div class="item">
+						<img src="../images/3.png" />
+						<div class="con_li_t">BOT30000</div>
+						<div class="con_li_t1">U$30000</div>
+						<div class="con_li_t2">1Bots</div>
+						<div class="con_li_t2">每日收益1%</div>
+						<div class="con_li_t2">up to 2.5%</div>
+						<button class="con_li_btn">升级</button>
+					</div>
+				</li> -->
+			</ul>
+		</div>
+		<div class="remind_order">
+			<div class="con">
+				<ul class="con_ul row">
+					<li class="con_li">
+						<div class="item">
+							<img src="../images/3.png" />
+							<div class="con_li_t">等级 T</div>
+							<div class="con_li_t1 con_li_t3">U$1000</div>
+							<div class="con_li_t2 con_li_t4">1Bots</div>
+							<div class="con_li_t2">每日收益3%</div>
+							<button class="confirm_btn">创建</button>
+							<button class="cancel_btn">取消</button>
+						</div>
+					</li>
+				<ul>
+			</div>
+		</div>
+	</aside>
+
+<script src="../../js/bootstrap.js"></script>
+<script src="../../js/md5.js"></script>
+<script src="../../js/common/common.js"></script>
+<link href="../../js/tool/tool.css" rel="stylesheet" />
+<script src="../../js/tool/tool.js"></script>
+</body>
+<script>
+	
+	$(document).ready(function(){
+		$('.remind_order').click(function(e){
+			e.stopPropagation();
+			if(e.currentTarget == e.target){
+				$(this).css('display','none');	
+			}
+		});
+		$('body').delegate('.con_li_btn_active','click',function(){ // 升级
+			var leavl = $(this).attr('data-type'); // 等级信息
+			$('.con_li_t').text(leavl);
+			var price = $(this).attr('data-price'); // 价格
+			$('.con_li_t3').text("U$"+price/100);
+			$('.con_li_t4').text(price/100000+"Bots");
+			
+			var id = $(this).attr('data-id');
+			$('.confirm_btn').attr("data-id",id);
+			$('.remind_order').css('display','block');
+		}); 
+		
+		$('.cancel_btn').click(function(){
+			$('.remind_order').css('display','none');
+		});
+	});
+	/**
+     * #获取计划等级
+     */
+    // public function getPlanLevel()
+	function getPlanLevel(){
+		var token = localStorage.getItem('token');
+		var id = localStorage.getItem('id');
+		var data = {"token":token,"user_id":id};
+		common.post('/getPlanLevel',data,function(res){
+			if(res.code == 0){
+				var _html = "";
+				var balance = localStorage.getItem("balance");// 获取用户当前余额
+				for (let s of res.data) {
+					if(balance>=s.price){ //  已升级 在激活或者未激活状态
+						_html += '<li class="con_li col-lg-6 col-md-6 col-sm-6 col-xs-12">'+
+						'<div class="item">'+
+							'<img src="../../images/3.png" />'+
+							'<div class="con_li_t">等级：'+s.name+'</div>'+
+							'<div class="con_li_t1">U$'+s.price/100+'</div>'+
+							'<div class="con_li_t2">'+s.price/100000+'Bots</div>'+
+							'<div class="con_li_t2">每日收益3%</div>'+
+							'<button class="con_li_btn" data-id="'+s.id+'">已激活</button></div></li>';
+					}else{ // 未升级状态
+						_html += '<li class="con_li col-lg-6 col-md-6 col-sm-6 col-xs-12">'+
+						'<div class="item">'+
+							'<img src="../../images/3.png" />'+
+							'<div class="con_li_t">等级：'+s.name+'</div>'+
+							'<div class="con_li_t1">U$'+s.price/100+'</div>'+
+							'<div class="con_li_t2">'+s.price/100000+'Bots</div>'+
+							'<div class="con_li_t2">每日收益3%</div>'+
+							'<button class="con_li_btn_active" data-type="'+s.name+'" data-price="'+s.price+'" data-id="'+s.id+'">升级</button></div></li>';
+					}
+				}
+				$('#plan_ul').html(_html);
+			}
+		});
+	}
+	getPlanLevel();
+	
+	/* #添加会员升级信息
+     * @post up_level_id 需升级等级id
+     * @exception 102 已成为该等级会员
+     * @exception 103 需升级等级不存在
+     * @exception 104 需升级等级低于当前等级
+     * @exception 105 已存在升级信息
+     * @exception 106 需升级等级低于当前等级
+     */
+    // public function setUserUpgrade()
+	$('.confirm_btn').click(function(){
+		var order_id = $('.confirm_btn').attr('data-id'); // 订单id
+		var token = localStorage.getItem('token');
+		var id = localStorage.getItem('id'); // 用户id 
+		var data = {"token":token,"user_id":id,"up_level_id":order_id};
+		common.post('/setUserUpgrade',data,function(res){
+			console.log(res);
+			if(res.code == 0){ // 订单已经创建
+				tool.remindPopus("提示","申请已经提交，正在跳转订单页面");
+				var data = {
+					"href":"src/plan/planOrder.html",
+					"href_text":"升级订单",
+				};
+				window.parent.setHref(data);
+				getUserInfo();
+			}else if(res.code == 105){
+				tool.remindPopus("提示","已经存在升级信息");
+				$('.remind_order').css('display','none');
+			}else if(res.code == 102){
+				tool.remindPopus("提示","已成为该等级会员");
+				$('.remind_order').css('display','none');
+			}else if(res.code == 103){
+				tool.remindPopus("提示","需升级等级不存在");
+				$('.remind_order').css('display','none');
+			}else if(res.code == 104){
+				tool.remindPopus("提示","需升级等级低于当前等级");
+				$('.remind_order').css('display','none');
+			}else if(res.code == 106){
+				tool.remindPopus("提示","需升级等级低于当前等级");
+				$('.remind_order').css('display','none');
+			}
+		});
+	});
+	
+	function getUserInfo(){
+		var token = localStorage.getItem('token');
+		var id = localStorage.getItem('id');
+		var data = {"token":token,"user_id":id};
+		common.post('/getUserInfo',data,function(res){
+			if(res.code == 0){
+				$(".a_s_i_val.balance").text(res.data.balance/100+"$");
+				localStorage.setItem("balance",res.data.balance); // 用户的当前充值金额
+			}
+		});
+	};
+</script>
+</html>

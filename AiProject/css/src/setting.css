@@ -1,39 +1,65 @@
+*{
+	list-style: none;
+}
 .con{
-	width: 90%;
+	width: 100%;
 	margin: auto;
+	margin-top: 20px;
+	padding-right: 15px;
+}
+.con .con_t {
+	margin-bottom: 20px;
+}
+.con .con_t .con_t_v{
+	background: #3e3e3e;
+	text-align: center;
+	border-radius: 4px;
+	padding: 30px 0 65px 0;
+}
+.con .con_t .con_t_v img{
+	width: 35%;
+	margin-top: 20px;
+}
+.con .con_t .con_t_v .con_t_leavl{
+	width: 120px;
+	background: #2583c2;
+	color: white;
+	height: 32px;
+	border-radius: 16px;
+	margin: auto;
+	line-height: 32px;
 	margin-top: 20px;
 }
 
-.con_t{
-	margin-top: 10px;
-}
-.con_t .con_t{
-	font-weight: 600;
-}
-.con .con_t>.btn-primary{
-	float: right;
-}
-.con_t .con_edit .btn-primary{
-	margin-left: 20px;
-	margin-top: 2px;
-}
+
 
 .con .con_ul{
-	padding-bottom: 20px;
+	padding-bottom: 35px;
 	text-align: left;
+	background: #3E3E3E;
+	border-radius: 4px;
+	padding-top: 10px;
+}
+@media (max-width:767px) {
+	.con .con_ul{
+		width: 94%;
+		margin-left: 4%;
+	}
 }
 .con .con_li{
 	list-style: none;
 	margin-top: 15px;
 	display: inline-block;
-	width: 35%;
-	border-bottom: 1px solid #E1E1E1;
+	width: 49%;
 	padding-bottom: 5px;
-	text-indent: 10px;
 }
 
 .con .con_li .con_li_t{
-	color: #000000;
+	display: inline-block;
+	width: 28%;
+	text-align: center;
+	color: white;
+	font-size: 14px;
 }
 .con .con_li .con_li_val{
 	color: #000000;
@@ -41,6 +67,11 @@
 }
 .con .con_li .con_li_val .item{
 	text-indent: 15px;
+	background: #505050;
+	border:none;
+	color: white;
+	width: 60%;
+	font-weight: 400;
 }
 
 .panel-body{
@@ -52,7 +83,81 @@
 	}
 }
 
-/*   修改密码  */
-.change_p_btn{
+/*   编辑资料 保存修改  */
+.con .con_btn{
+	width: 100%;
 	text-align: center;
+	color: white;
+	list-style: none;
+}
+.con .con_btn .con_btn_b{
+	display: inline-block;
+	background: #2583c2;
+	padding: 4px 20px;
+	font-size: 14px;
+	border-radius: 4px;
+	margin-top: 25px;
+	min-width: 100px;
+	cursor: pointer;
+}
+.con .con_btn .con_btn_b:hover{
+	background: #246e9f;
+}
+.con .con_btn .con_btn_b.con_btn_edit{
+	margin-right: 30px;
+}
+
+/*   修改密码  */
+.cp{
+	width: 96%;
+	margin: auto;
+}
+.hea{
+	margin-left: 0;
+}
+.hea .hea_t{
+	padding: 10px 0;
+	text-align: center;
+	background: #3E3E3E;
+	color: white;
+	margin-top: 20px;
+}
+.hea .hea_t.active{
+	background: #2583c2;
+}
+.cp .con{
+	margin: 0;
+	padding: 0;
+	margin-top: 20px;
+	}
+.cp .con_c{
+	background: #3E3E3E;
+	color: white;
+	border-radius: 4px;
+	padding-bottom: 30px;
+}
+.cp .con_c .con_title{
+	text-align: center;
+	padding: 20px 0 10px 0;
+}
+.cp .con_c .con_c_u .con_c_l_t{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+}
+.cp .con_c .con_c_u .con_c_l_t{
+	display: inline-block;
+	width: 25%;
+	text-align: center;
+	font-size: 14px;
+}
+.cp .con_c .con_c_u .con_c_l_in{
+	display: inline-block;
+	background: #505050;
+	border: none;
+	text-indent: 15px;
+	width: 68%;
+	font-size: 14px;
+	height: 28px;
+	line-height: 28px;
 }

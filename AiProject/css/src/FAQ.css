@@ -9,31 +9,39 @@ li{
 	margin-left: 20px;
 	width: 94%;
 	margin: auto;
-	padding-top: 30px;
+	background: #505050;
+	margin-top: 20px;
+	border-radius: 8px;
+	padding-bottom: 20px;
 }
 .con .item .item_t{
-	color: 20px;
+	color: white;
 	font-weight: 600;
+	margin-left: 3%;
+	padding-top: 10px;
 }
 .con .item .con_ul .c_u_l{
 	padding-top: 10px;
 }
 .con .item .con_ul .c_u_l .c_u_l_i{
-	width: 100%;
+	width: 98%;
+	margin-left: 1%;
 	height: 48px;
 	line-height: 48px;
 	text-indent: 15px;
-	background: #00A6B2;
+	background: rgb(31,31,31);
 	color: white;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	font-size: 14px;
-	margini-top:20px;
+	/* margini-top:20px; */
 }
 .con .item .con_ul .c_u_l .c_u_l_i_v{
+	width: 98%;
+	margin-left: 1%;
 	font-size: 13px;
 	padding: 12px 0;
-	background: #6bb5ba;
+	background: rgb(62,62,62);
 	color: #eee;
 	display: none;
 }

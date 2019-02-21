@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<head>
+	<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Responsive_table :: w3layouts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function() {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- bootstrap-css -->
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<!-- //bootstrap-css -->
+	<!-- Custom CSS -->
+	<link href="../../css/style.css" rel='stylesheet' type='text/css' />
+	<link href="../../css/style-responsive.css" rel="stylesheet" />
+	<!-- font CSS -->
+	<!-- font-awesome icons -->
+	<link rel="../../stylesheet" href="css/font.css" type="text/css" />
+	<link href="../../css/font-awesome.css" rel="stylesheet">
+	<link href="../../css/src/record.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../../css/src/income.css" />
+	<!-- //font-awesome icons -->
+	<script src="../../js/jquery2.0.3.min.js"></script>
+
+	<!--   时间选择组件 -->
+	<link href="../../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+</head>
+<body style="background: #6ecff2;">
+
+	<div class="con container" style="padding: 0;">
+		<div class="con_tips">
+			提示：<span class="con_t_1">拿下三级，拿下一级收益的6%，拿下第二级收益的4%，拿下第三级收益的3%。</span>
+			<div class="con_t_2">A推荐两个会员B，B推荐会员C，C推荐D，如果	D今天的静态收益为100$,那么C=100*6%=6($)，
+			B=100*4%=4($)，A=100*3%=3($)，</div>
+		</div>
+	</div>
+	<div class="rec">
+	
+			<div class="rec_c">
+				<div class="rec_t">领导奖明细</div>
+				<div class="date_search">
+					<!--  日期选择 -->
+					<div class="form-group date_form_group">
+						<div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+						 data-link-format="yyyy-mm-dd">
+							<input class="form-control" size="16" type="text" value="" readonly placeholder="开始时间">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+						</div>
+						<input type="hidden" id="dtp_input1" value="" />
+					</div>
+					<div class="date_s_z">至</div>
+					<div class="form-group date_form_group">
+						<div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+						 data-link-format="yyyy-mm-dd">
+							<input class="form-control" size="16" type="text" value="" readonly placeholder="结束时间">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+						</div>
+						<input type="hidden" id="dtp_input2" value="" />
+					</div>
+					<div class="date_btn">
+						<button class="btn btn-primary" type="submit">查询</button>
+					</div>
+	
+				</div>
+				<div>
+					<table class="rec_table" ui-jq="footable" ui-options='{
+	        "paging": {
+	          "enabled": true
+	        },
+	        "filtering": {
+	          "enabled": true
+	        },
+	        "sorting": {
+	          "enabled": true
+	        }}'>
+						<thead>
+							<tr>
+								<th data-breakpoints="xs" style="min-width: 50px;">ID</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th data-breakpoints="xs">Job Title</th>
+	
+								<th data-breakpoints="xs sm md" data-title="DOB">Date of Birth</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr data-expanded="true">
+								<td>1</td>
+								<td>Dennise</td>
+								<td>Fuhrman</td>
+								<td>High School History Teacher</td>
+	
+								<td>July 25th 1960</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Elodia</td>
+								<td>Weisz</td>
+								<td>Wallpaperer Helper</td>
+	
+								<td>March 30th 1982</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Raeann</td>
+								<td>Haner</td>
+								<td>Internal Medicine Nurse Practitioner</td>
+	
+								<td>February 26th 1966</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Junie</td>
+								<td>Landa</td>
+								<td>Offbearer</td>
+	
+								<td>March 29th 1966</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Solomon</td>
+								<td>Bittinger</td>
+								<td>Roller Skater</td>
+	
+								<td>September 22nd 1964</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>Bar</td>
+								<td>Lewis</td>
+								<td>Clown</td>
+	
+								<td>August 4th 1991</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<footer class="panel-footer">
+				<div class="row">
+	
+					<div class="col-sm-5 text-center">
+						<!-- <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small> -->
+					</div>
+					<div class="col-sm-7 text-right text-center-xs">
+						<ul class="pagination pagination-sm m-t-none m-b-none">
+							<li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+							<li><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+	<script src="../../js/bootstrap.js"></script>
+</body>
+<script>
+
+</script>
+</html>

@@ -1,132 +1,130 @@
 *{
 	list-style: none;
 }
-
-.con{
-	background: rgb(238,249,240);
-	width: 100%;
-}
-.con .con_ul{
-	background: rgb(238,249,240);
-	width: 94%;
+.in_con{
+	background: #252525;
+	width: 97%;
 	margin: auto;
 	margin-top: 20px;
-	display: flex;
-}
-.con .con_ul .con_li{
-	width: 32%;
-	color: #999;
-	line-height: 38px;
-	text-align: center;
-	padding: 5px 0;
-}
-.con .con_ul .con_li .con_li_v{
+	border-radius: 8px;
 	color: white;
-	padding-bottom: 20px;
+	padding: 20px 0;
 }
-.con .con_u .con_l{
-	margin-top: 20px;
-	padding-bottom: 10px;
-}
-.con .con_u .con_l .item{
-	min-height: 240px;
-	width: 94%;
-	margin: auto;
-	background: rgb(76,76,76);
-	text-align: center;
-	padding-top: 20px;
-	color: white;
-	position: relative;
-	border-radius: 4px;
-	box-shadow: 2px 2px 1px rgba(76,76,76,0.5),
-	-2px -2px 1px rgba(76,76,76,0.5);
-	padding-bottom: 10px;
-}
-.con .con_u .con_l .item:hover{
-	transform: scale(1.02);
-	-webkit-transform: scale(1.02);
-	-moz-transform: scale(1.02);
-	-o-transform: scale(1.02);
-	-ms-transform: scale(1.02);
-}
-
-.con .con_u .con_l .item .item_t{
-	font-size: 24px;
-}
-.con .con_u .con_l .item .item_income{
-	font-size: 13px;
-	margin-top: 8px;
-}
-.con .con_u .con_l .item .item_income span{
-	color: rgb(251,150,120);
-	font-size: 16px;
-}
-.con .con_u .con_l .item .item_tip,
-.con .con_u .con_l .item .item_remind{
-	text-align: left;
-	width: 80%;
-	margin: auto;
-	margin-top: 15px;
-	font-size: 13px;
-}
-.con .con_u .con_l .item .item_btn{
-	position: absolute;
-	display: inline-block;
-	width: 30%;
-	height: 28px;
-	line-height: 28px;
-	background: rgb(158,186,70);
-	font-size: 14px;
-	border-radius: 4px;
-	bottom: 20px;
-	left: 35%;
-}
-.con .con_u .con_l .item .item_btn.active{
-	background: rgb(251,150,120);
-}
-
- .table-agile-info{
-	background: rgb(238,249,240);
-	width: 100%;
-	margin: auto;
-	padding: 0;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	z-index: 10;
-}
-.table_close{
-	background: rgb(76,76,76);
-	width: 24px;
-	height: 24px;
-	border-radius: 50%;
-	margin: auto;
-	padding: 0;
-	right: 10px;
-	position: fixed;
-	top: 10px;
-	z-index: 11;
-	overflow: hidden;
-}
-.table_close img{
-	width: 50%;
-	margin-left: 25%;
-	margin-top: -2px;
-}
- .table-agile-info .panel .table{
-	margin-bottom: 0;
-}
-
-@media (max-width:767px){
-	.table-agile-info{
-		background: rgba(0,0,0,0);
-		width: 100%;
-		margin: auto;
-	}
-}
-.con_tips{
+.in_con .in_table{
 	width: 90%;
 	margin: auto;
-	margin-top: 15px;
-	font-weight: 600;
+}
+.in_con .in_table .in_li{
+	display: flex;
+	height: 42px;
+	line-height: 42px;
+	border-bottom: 1px solid #ffffff;
+}
+.in_con .in_table .in_li:first-child{
+	border-top: 1px solid #FFFFFF;
+}
+.in_con .in_table .in_li .in_l_i{
+	width: 34%;
+	text-align: center;
+	border-left: 1px solid #FFFFFF;
+}
+.in_con .in_table .in_li .in_l_i:last-child{
+	border-right: 1px solid #FFFFFF;
+}
+
+/*  动态收益  */
+.con{
+	width: 97%;
+	margin: auto;
+}
+.con_tips{
+	width: 100%;
+	background: #3e3e3e;
+	padding: 20px 0;
+	color: white;
+	font-size: 14px;
+	text-indent: 3%;
+	margin-top: 20px;
+	border-radius: 8px;
+	line-height: 28px;
+}
+.con_tips .con_t_2{
+	padding-left: 45px;
+}
+@media (max-width:767px) {
+	.con_tips{
+		width: 94%;
+		margin: auto;
+		margin-top: 20px;
+	}
+}
+
+
+.con .con_u .con_l .item{
+	background: #3E3E3E;
+	margin-top: 20px;
+	border-radius: 8px;
+	padding: 20px 20px;
+	color: white;
+	position: relative;
+	min-height: 230px;
+	padding-bottom: 50px;
+}
+.con .con_u .con_l .item:hover{
+	/* transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.02);
+	-o-transform: scale(1.02);
+	-ms-transform: scale(1.02); */
+}
+.con .con_u .con_l .item .item_t img{
+	width: 24px;
+}
+.con .con_u .con_l .item .item_t .item_t_v{
+	font-size: 18px;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+.con .con_u .con_l .item .item_b_1{
+	float: right;
+	margin-top: -20px;
+	color: #c7585c;
+	font-size: 16px;
+}
+.con .con_u .con_l .item .item_b_1 img{
+	width: 16px;
+	margin-top: -2px;
+}
+.con .con_u .con_l .item .item_b_1 .lock{
+	display: none;
+}
+.con .con_u .con_l .item .item_b_1.active{
+	color: #04ada1;
+}
+.con .con_u .con_l .item .item_b_1.active .lock{
+	display: inline-block;
+}
+.con .con_u .con_l .item .item_b_1.active .unlock{
+	display: none;
+}
+
+.con .con_u .con_l .item .item_remind{
+	font-size: 13px;
+	margin-top: 20px;
+	line-height: 28px;
+}
+.con .con_u .con_l .item .item_info_btn{
+	display: inline-block;
+	width: 100px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	background: #2583c2;
+	color: white;
+	font-size: 13px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	cursor: pointer;
 }

@@ -26,18 +26,28 @@
 }
 .con .con_ul .con_li .item .cancel_btn,
 .con .con_ul .con_li .item .confirm_btn,
-.con .con_ul .con_li .item  .con_li_btn{
+.con .con_ul .con_li .item  .con_li_btn_active{
 	outline: none;
 	width: 200px;
 	margin-top: 20px;
 	border: 1px solid #efefef;
 	height: 32px;
-	line-height: 31px;
+	line-height: 27px;
 	border-radius: 5px;
 	background: rgba(0,0,0,0);
 }
-.con .con_ul .con_li .item .con_li_btn:hover{
+.con .con_ul .con_li .item .con_li_btn_active:hover{
 	/* background: #d1d1d1; */
+}
+.con .con_ul .con_li .item .con_li_btn{
+	background: rgb(158,186,70);
+	outline: none;
+	width: 200px;
+	margin-top: 20px;
+	border: 1px solid #efefef;
+	height: 32px;
+	line-height: 27px;
+	border-radius: 5px;
 }
 .con .con_ul .con_li .item .confirm_btn{
 	width: 90px;
@@ -63,12 +73,13 @@
 	top: 0;
 	bottom: 0;
 	z-index: 10;
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.5);
 	width: 100%;
+	display: none;
 }
 .remind_order .con{
 	margin: auto;
-	width:30%;
+	width:40%;
 	min-width: 350px;
 	margin-top: 80px;
 }
